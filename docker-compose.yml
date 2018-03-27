@@ -1,0 +1,29 @@
+version: "3.4"
+
+services:
+  frontend:
+    image: customergauge/admin-panel-frontend
+    build: 
+      context: .
+      target: frontend
+    volumes:
+      - .:/var/www
+  backend:
+    image: customergauge/admin-panel-backend
+    build: 
+      context: .
+      target: backend
+    volumes:
+      - .:/var/www
+      - /srv/share/composer-cache:/root/.composer/cache
+  app:
+    image: customergauge/admin-panel
+    build: .
+    volumes:
+      - .:/var/www
+    ports:
+      - 80:80
+  test:
+    image: customergauge/admin-panel
+    volumes:
+      - ./vendor:/var/www/vendor
