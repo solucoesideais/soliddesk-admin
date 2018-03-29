@@ -2,14 +2,14 @@ version: "3.4"
 
 services:
   frontend:
-    image: customergauge/admin-panel-frontend
+    image: soliddesk/admin-frontend
     build: 
       context: .
       target: frontend
     volumes:
       - .:/var/www
   backend:
-    image: customergauge/admin-panel-backend
+    image: soliddesk/backend
     build: 
       context: .
       target: backend
@@ -17,13 +17,13 @@ services:
       - .:/var/www
       - /srv/share/composer-cache:/root/.composer/cache
   app:
-    image: customergauge/admin-panel
+    image: soliddesk/admin
     build: .
     volumes:
       - .:/var/www
     ports:
       - 80:80
-  test:
-    image: customergauge/admin-panel
+  ci-test:
+    image: soliddesk/admin
     volumes:
       - ./vendor:/var/www/vendor
