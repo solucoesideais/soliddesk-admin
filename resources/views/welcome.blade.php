@@ -16,13 +16,14 @@
 
 
   </style>
-
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script type="text/javascript">
 
   </script>
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed pace-done">
   <div class="pace  pace-inactive">
@@ -41,25 +42,15 @@
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <ul class="nav navbar-nav d-md-down-none">
-      <li class="nav-item px-3">
-        <a class="nav-link" href="#">Dashboard</a>
-      </li>
-      <li class="nav-item px-3">
-        <a class="nav-link" href="#">Users</a>
-      </li>
-      <li class="nav-item px-3">
-        <a class="nav-link" href="#">Settings</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav ml-auto">
+    <ul class="nav navbar-nav ml-auto mr-4">
       <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-          <img src="img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <img src="{{ asset('images/avatar.png') }}" class="img-avatar">
+          <span class="name"> John Doe</span>
         </a>
         <div class="dropdown-menu dropdown-menu-right">
           <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+          <a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
         </div>
       </li>
     </ul>
@@ -70,35 +61,35 @@
       <nav class="sidebar-nav">
         <ul class="nav">
           <li class="nav-item open">
-            <a class="nav-link" href="main.html"><i class="icon-speedometer"></i> Dashboard</a>
+            <a class="nav-link active" href="main.html"><i class="icon-speedometer"></i> Dashboard</a>
           </li>
           <li class="nav-title">
             Gerenciar
           </li>
           <li class="nav-item">
-            <a href="admin.html" class="nav-link"><i class="icon-drop"></i> Admin</a>
+            <a href="admin.html" class="nav-link"><i class="icon-wrench"></i> Admin</a>
           </li>
           <li class="nav-item">
-            <a href="support.html" class="nav-link"><i class="icon-pencil"></i> Técnico</a>
+            <a href="support.html" class="nav-link"><i class="icon-support"></i> Técnico</a>
           </li>
           <li class="nav-item">
-            <a href="department.html" class="nav-link"><i class="icon-pencil"></i> Departamento</a>
+            <a href="department.html" class="nav-link"><i class="icon-tag"></i> Departamento</a>
           </li>
           <li class="nav-item">
-            <a href="company.html" class="nav-link"><i class="icon-pencil"></i> Empresa</a>
+            <a href="company.html" class="nav-link"><i class="icon-briefcase"></i> Empresa</a>
           </li>
           <li class="nav-item">
             <a href="manager.html" class="nav-link"><i class="icon-pencil"></i> Gestor</a>
           </li>
           <li class="nav-item">
-            <a href="user.html" class="nav-link"><i class="icon-pencil"></i> Usuário</a>
+            <a href="user.html" class="nav-link"><i class="icon-user"></i> Usuário</a>
           </li>
           <li class="divider"></li>
           <li class="nav-title">
             Relatórios
           </li>
           <li class="nav-item nav-dropdown">
-            <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-puzzle"></i> Qnt chamados</a>
+            <a class="nav-link nav-dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="icon-puzzle"></i> Qnt chamados</a>
             <ul class="nav-dropdown-items">
               <li class="nav-item">
                 <a class="nav-link" href="base/cards.html"><i class="icon-puzzle"></i> Técnicos</a>
@@ -112,10 +103,10 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="base/popovers.html"><i class="icon-puzzle"></i> Velocidade</a>
+            <a class="nav-link" href="base/popovers.html"><i class="icon-graph"></i> Velocidade</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="base/progress.html"><i class="icon-puzzle"></i> Chamados totais</a>
+            <a class="nav-link" href="base/progress.html"><i class="icon-chart"></i> Chamados totais</a>
           </li>
         </ul>
       </nav>
@@ -125,29 +116,6 @@
       <div class="container-fluid">
         <div id="ui-view" style="opacity: 1;">
           <div class="animated fadeIn">
-
-          </div>
-
-
-          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title">Modal title</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>One fine body…</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-
-            </div>
 
           </div>
         </div>
