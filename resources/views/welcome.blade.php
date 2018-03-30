@@ -1,406 +1,127 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+  <title>Laravel</title>
 
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    </head>
-    <body>
-    <main class="main">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
 
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">Home</li>
-            <li class="breadcrumb-item"><a href="#">Admin</a></li>
-            <li class="breadcrumb-item active">Dashboard</li>
+  <style type="text/css">
+  /* css here */
 
-            <li class="breadcrumb-menu d-md-down-none">
-                <div class="btn-group" role="group" aria-label="Button group">
-                    <a class="btn" href="#"><i class="icon-speech"></i></a>
-                    <a class="btn" href="./"><i class="icon-graph"></i> &nbsp;Dashboard</a>
-                    <a class="btn" href="#"><i class="icon-settings"></i> &nbsp;Settings</a>
-                </div>
-            </li>
-        </ol>
-        <div class="container-fluid">
-            <div id="ui-view" style="opacity: 1;"><div class="animated fadeIn">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <i class="fa fa-align-justify"></i> Simple Table
-                                </div>
-                                <div class="card-body">
-                                    <table class="table table-responsive-sm">
-                                        <thead>
-                                        <tr>
-                                            <th>Username</th>
-                                            <th>Date registered</th>
-                                            <th>Role</th>
-                                            <th>Status</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>Samppa Nori</td>
-                                            <td>2012/01/01</td>
-                                            <td>Member</td>
-                                            <td>
-                                                <span class="badge badge-success">Active</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Estavan Lykos</td>
-                                            <td>2012/02/01</td>
-                                            <td>Staff</td>
-                                            <td>
-                                                <span class="badge badge-danger">Banned</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Chetan Mohamed</td>
-                                            <td>2012/02/01</td>
-                                            <td>Admin</td>
-                                            <td>
-                                                <span class="badge badge-secondary">Inactive</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Derick Maximinus</td>
-                                            <td>2012/03/01</td>
-                                            <td>Member</td>
-                                            <td>
-                                                <span class="badge badge-warning">Pending</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Friderik Dávid</td>
-                                            <td>2012/01/21</td>
-                                            <td>Staff</td>
-                                            <td>
-                                                <span class="badge badge-success">Active</span>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    <ul class="pagination">
-                                        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                                        <li class="page-item active">
-                                            <a class="page-link" href="#">1</a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <i class="fa fa-align-justify"></i> Striped Table
-                                </div>
-                                <div class="card-body">
-                                    <table class="table table-responsive-sm table-striped">
-                                        <thead>
-                                        <tr>
-                                            <th>Username</th>
-                                            <th>Date registered</th>
-                                            <th>Role</th>
-                                            <th>Status</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>Yiorgos Avraamu</td>
-                                            <td>2012/01/01</td>
-                                            <td>Member</td>
-                                            <td>
-                                                <span class="badge badge-success">Active</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Avram Tarasios</td>
-                                            <td>2012/02/01</td>
-                                            <td>Staff</td>
-                                            <td>
-                                                <span class="badge badge-danger">Banned</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Quintin Ed</td>
-                                            <td>2012/02/01</td>
-                                            <td>Admin</td>
-                                            <td>
-                                                <span class="badge badge-secondary">Inactive</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Enéas Kwadwo</td>
-                                            <td>2012/03/01</td>
-                                            <td>Member</td>
-                                            <td>
-                                                <span class="badge badge-warning">Pending</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Agapetus Tadeáš</td>
-                                            <td>2012/01/21</td>
-                                            <td>Staff</td>
-                                            <td>
-                                                <span class="badge badge-success">Active</span>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    <ul class="pagination">
-                                        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                                        <li class="page-item active">
-                                            <a class="page-link" href="#">1</a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+  </style>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
 
-                    </div>
+  </script>
 
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <i class="fa fa-align-justify"></i> Condensed Table
-                                </div>
-                                <div class="card-body">
-                                    <table class="table table-responsive-sm table-sm">
-                                        <thead>
-                                        <tr>
-                                            <th>Username</th>
-                                            <th>Date registered</th>
-                                            <th>Role</th>
-                                            <th>Status</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>Carwyn Fachtna</td>
-                                            <td>2012/01/01</td>
-                                            <td>Member</td>
-                                            <td>
-                                                <span class="badge badge-success">Active</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Nehemiah Tatius</td>
-                                            <td>2012/02/01</td>
-                                            <td>Staff</td>
-                                            <td>
-                                                <span class="badge badge-danger">Banned</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ebbe Gemariah</td>
-                                            <td>2012/02/01</td>
-                                            <td>Admin</td>
-                                            <td>
-                                                <span class="badge badge-secondary">Inactive</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Eustorgios Amulius</td>
-                                            <td>2012/03/01</td>
-                                            <td>Member</td>
-                                            <td>
-                                                <span class="badge badge-warning">Pending</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Leopold Gáspár</td>
-                                            <td>2012/01/21</td>
-                                            <td>Staff</td>
-                                            <td>
-                                                <span class="badge badge-success">Active</span>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    <ul class="pagination">
-                                        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                                        <li class="page-item active">
-                                            <a class="page-link" href="#">1</a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <i class="fa fa-align-justify"></i> Bordered Table
-                                </div>
-                                <div class="card-body">
-                                    <table class="table table-responsive-sm table-bordered">
-                                        <thead>
-                                        <tr>
-                                            <th>Username</th>
-                                            <th>Date registered</th>
-                                            <th>Role</th>
-                                            <th>Status</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>Pompeius René</td>
-                                            <td>2012/01/01</td>
-                                            <td>Member</td>
-                                            <td>
-                                                <span class="badge badge-success">Active</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Paĉjo Jadon</td>
-                                            <td>2012/02/01</td>
-                                            <td>Staff</td>
-                                            <td>
-                                                <span class="badge badge-danger">Banned</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Micheal Mercurius</td>
-                                            <td>2012/02/01</td>
-                                            <td>Admin</td>
-                                            <td>
-                                                <span class="badge badge-secondary">Inactive</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ganesha Dubhghall</td>
-                                            <td>2012/03/01</td>
-                                            <td>Member</td>
-                                            <td>
-                                                <span class="badge badge-warning">Pending</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Hiroto Šimun</td>
-                                            <td>2012/01/21</td>
-                                            <td>Staff</td>
-                                            <td>
-                                                <span class="badge badge-success">Active</span>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    <ul class="pagination">
-                                        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                                        <li class="page-item active">
-                                            <a class="page-link" href="#">1</a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <i class="fa fa-align-justify"></i> Combined All Table
-                                </div>
-                                <div class="card-body">
-                                    <table class="table table-responsive-sm table-bordered table-striped table-sm">
-                                        <thead>
-                                        <tr>
-                                            <th>Username</th>
-                                            <th>Date registered</th>
-                                            <th>Role</th>
-                                            <th>Status</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>Vishnu Serghei</td>
-                                            <td>2012/01/01</td>
-                                            <td>Member</td>
-                                            <td>
-                                                <span class="badge badge-success">Active</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Zbyněk Phoibos</td>
-                                            <td>2012/02/01</td>
-                                            <td>Staff</td>
-                                            <td>
-                                                <span class="badge badge-danger">Banned</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Einar Randall</td>
-                                            <td>2012/02/01</td>
-                                            <td>Admin</td>
-                                            <td>
-                                                <span class="badge badge-secondary">Inactive</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Félix Troels</td>
-                                            <td>2012/03/01</td>
-                                            <td>Member</td>
-                                            <td>
-                                                <span class="badge badge-warning">Pending</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Aulus Agmundr</td>
-                                            <td>2012/01/21</td>
-                                            <td>Staff</td>
-                                            <td>
-                                                <span class="badge badge-success">Active</span>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    <nav>
-                                        <ul class="pagination">
-                                            <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                                            <li class="page-item active">
-                                                <a class="page-link" href="#">1</a>
-                                            </li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div></div>
+</head>
+<body class="app header-fixed sidebar-fixed aside-menu-fixed pace-done">
+  <div class="pace  pace-inactive">
+    <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+      <div class="pace-progress-inner">
+      </div>
+    </div>
+    <div class="pace-activity">
+    </div>
+  </div>
+  <header class="app-header navbar">
+    <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <ul class="nav navbar-nav ml-auto mr-4">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <img src="{{ asset('images/avatar.png') }}" class="img-avatar">
+          <span class="name"> John Doe</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
+          <a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
         </div>
+      </li>
+    </ul>
 
-    </main>
-    </body>
+  </header>
+  <div class="app-body">
+    <div class="sidebar">
+      <nav class="sidebar-nav">
+        <ul class="nav">
+          <li class="nav-item open">
+            <a class="nav-link active" href="main.html"><i class="icon-speedometer"></i> Dashboard</a>
+          </li>
+          <li class="nav-title">
+            Gerenciar
+          </li>
+          <li class="nav-item">
+            <a href="admin.html" class="nav-link"><i class="icon-wrench"></i> Admin</a>
+          </li>
+          <li class="nav-item">
+            <a href="support.html" class="nav-link"><i class="icon-support"></i> Técnico</a>
+          </li>
+          <li class="nav-item">
+            <a href="department.html" class="nav-link"><i class="icon-tag"></i> Departamento</a>
+          </li>
+          <li class="nav-item">
+            <a href="company.html" class="nav-link"><i class="icon-briefcase"></i> Empresa</a>
+          </li>
+          <li class="nav-item">
+            <a href="manager.html" class="nav-link"><i class="icon-pencil"></i> Gestor</a>
+          </li>
+          <li class="nav-item">
+            <a href="user.html" class="nav-link"><i class="icon-user"></i> Usuário</a>
+          </li>
+          <li class="divider"></li>
+          <li class="nav-title">
+            Relatórios
+          </li>
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="icon-puzzle"></i> Qnt chamados</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="base/cards.html"><i class="icon-puzzle"></i> Técnicos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="base/carousel.html"><i class="icon-puzzle"></i> Empresas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="base/collapse.html"><i class="icon-puzzle"></i> Gestores</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="base/popovers.html"><i class="icon-graph"></i> Velocidade</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="base/progress.html"><i class="icon-chart"></i> Chamados totais</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <main class="main">
+      <div class="container-fluid">
+        <div id="ui-view" style="opacity: 1;">
+          <div class="animated fadeIn">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</body>
 </html>
