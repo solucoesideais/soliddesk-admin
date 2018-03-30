@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => App\Administrator::class,
+        'model' => Library\Eloquent\Auth\Administrator::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

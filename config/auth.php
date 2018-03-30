@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Administrator::class,
+            'model' => Library\Eloquent\Auth\Administrator::class,
         ],
 
         // 'users' => [

@@ -28,5 +28,10 @@
         <env name="SESSION_DRIVER" value="array"/>
         <env name="QUEUE_DRIVER" value="sync"/>
         <env name="MAIL_DRIVER" value="array"/>
+
+        <env name="DB_HOST" value="database"/>
+        <env name="DB_USERNAME" value="root"/>
+        <env name="DB_PASSWORD" value="secret"/>
+        <env name="DB_DATABASE" value="soliddesk"/>
     </php>
 </phpunit>

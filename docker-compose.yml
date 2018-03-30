@@ -16,6 +16,7 @@ services:
     volumes:
       - .:/var/www
       - /srv/share/composer-cache:/root/.composer/cache
+      - /dev/null:/usr/local/etc/php/conf.d/opcache.ini
   app:
     image: soliddesk/admin
     build: .
@@ -23,7 +24,16 @@ services:
       - .:/var/www
     ports:
       - 80:80
+    depends_on:
+      - database
   ci-test:
     image: soliddesk/admin
     volumes:
       - ./vendor:/var/www/vendor
+  database:
+    image: mysql:5.6
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: soliddesk
