@@ -13,7 +13,8 @@
             <div class="card-body">
               <form action="/password/email" method="post">
                 @csrf
-                <p class="text-muted">Recuperar senha</p>
+                <h1>Recuperar senha</h1>
+                <p class="text-muted">Digite seu email</p>
                 <div class="input-group mb-4">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-user"></i></span>
