@@ -9,6 +9,7 @@ class ViewsServiceProvider extends ServiceProvider
 {
     public function register()
     {
+        View::addNamespace('auth', app_path('Modules/Auth/resources/views'));
         View::addNamespace('home', app_path('Modules/Home/resources/views'));
     }
 }
