@@ -12,4 +12,5 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
+mix.copy('resources/assets/js/jQuery/menu.js', 'public/js/menu.js')
    .sass('resources/assets/sass/style.scss', 'public/css');

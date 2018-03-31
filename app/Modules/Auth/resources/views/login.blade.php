@@ -1,1 +1,5 @@
-login
+@extends('base')
+
+@section('page')
+    Login
+@endsection

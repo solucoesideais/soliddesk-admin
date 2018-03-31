@@ -1,1 +1,5 @@
-{{ auth()->user()->email }}
+@extends('layout')
+
+@section('content')
+    Home Page
+@endsection
