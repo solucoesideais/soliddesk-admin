@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Administrators;
 
+use App\Http\Requests\BaseFormRequest;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Hash;
 use Library\Eloquent\Auth\Administrator;
@@ -26,7 +27,6 @@ class CreateAdminTest extends TestCase
 
     /**
      * @test
-     * @group f
      */
     public function an_admin_can_create_another_admin()
     {
@@ -51,5 +51,15 @@ class CreateAdminTest extends TestCase
                 Administrator::where('email', $email)->first()->password
             )
         );
+    }
+
+    /**
+     * @test
+     */
+    public function test_validation()
+    {
+        $this->post('/administrators')
+            ->assertStatus(302)
+            ->assertSessionHasErrorsIn(BaseFormRequest::FORM_ERROR_BAG, ['name', 'email', 'password']);
     }
 }
