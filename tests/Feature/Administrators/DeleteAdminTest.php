@@ -9,20 +9,26 @@ use Library\Eloquent\Auth\Administrator;
 use Tests\Concerns\AuthenticatesAdmin;
 use Tests\TestCase;
 
-class CreateAdminTest extends TestCase
+class DeleteAdminTest extends TestCase
 {
-    use AuthenticatesAdmin, WithFaker;
+    use AuthenticatesAdmin;
 
     /**
      * @test
      */
     public function an_admin_can_see_the_create_admin_form()
     {
-        $this->get('/administrators/create')
-            ->assertSuccessful()
-            ->assertSee('name="name"')
-            ->assertSee('name="email"')
-            ->assertSee('name="password"');
+        $administrator = create(Administrator::class);
+
+        $this->delete("/administrators/$administrator->id")
+            ->assertStatus(302)
+            ->assertRedirect('/administrators');
+
+        $this->assertSoftDeleted('administrators', [
+            'id' => $administrator->id,
+            'email' => $administrator->email
+        ]);
+
     }
 
     /**

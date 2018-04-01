@@ -8,6 +8,6 @@ class CreatesAdministratorsForm extends Controller
 {
     public function __invoke()
     {
-        return view('administrators::create');
+        return view('administrators::manage');
     }
 }

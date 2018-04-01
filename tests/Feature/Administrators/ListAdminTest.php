@@ -9,20 +9,25 @@ use Library\Eloquent\Auth\Administrator;
 use Tests\Concerns\AuthenticatesAdmin;
 use Tests\TestCase;
 
-class CreateAdminTest extends TestCase
+class ListAdminTest extends TestCase
 {
-    use AuthenticatesAdmin, WithFaker;
+    use AuthenticatesAdmin;
 
     /**
      * @test
      */
     public function an_admin_can_see_the_create_admin_form()
     {
-        $this->get('/administrators/create')
-            ->assertSuccessful()
-            ->assertSee('name="name"')
-            ->assertSee('name="email"')
-            ->assertSee('name="password"');
+        $administrators = create(Administrator::class, [], 3);
+
+        $response = $this->get('/administrators')
+            ->assertSuccessful();
+
+        foreach ($administrators as $administrator) {
+            $response->assertSeeText($administrator->name)
+                ->assertSeeText($administrator->email)
+                ->assertSee("/administrators/$administrator->id/edit");
+        }
     }
 
     /**
