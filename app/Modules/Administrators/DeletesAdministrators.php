@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Administrators\resources;
+namespace App\Modules\Administrators;
 
 use App\Http\Controllers\Controller;
 use Library\Eloquent\Auth\Administrator;

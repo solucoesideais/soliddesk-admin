@@ -51,7 +51,7 @@
         </div>
         <div class="modal-footer">
           <div class="form-group form-actions">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <a class="btn btn-secondary" href="/administrators">Cancelar</a>
             <button type="submit" class="btn btn-primary">Salvar</button>
           </div>
         </div>

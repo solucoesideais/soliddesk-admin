@@ -28,8 +28,15 @@
               <td>{{ $administrator->name }}</td>
               <td>{{ $administrator->email }}</td>
               <td>{{ $administrator->created_at }}</td>
-              <td><a href="#">
-                <i class="text-danger fa fa-trash"></i></a>
+              <td>
+                  <form action="/administrators/{{ $administrator->id }}" method="post">
+                      @csrf
+                      @method('delete')
+
+                      <button class="btn btn-link" type="submit" href="#">
+                          <i class="text-danger fa fa-trash fa-lg"></i>
+                      </button>
+                  </form>
               </td>
             </tr>
             @endforeach
@@ -38,36 +45,17 @@
         <!-- pagination -->
         <div class="row">
           <div class="col-6">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="#">Prev</a>
-          </li>
-          <li class="page-item active">
-            <a class="page-link" href="#">1</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">2</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">3</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">4</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-        </div>
-        <div class="col-6 text-right">
+              {{ $administrators->render() }}
+          </div>
+          <div class="col-6 text-right">
           <!-- button trigger popup -->
-        <a class="btn btn-primary" href="/administrators/create">
-          <i class="fa fa-plus"></i> Cadastre Admin
-        </a>
+            <a class="btn btn-primary" href="/administrators/create">
+              <i class="fa fa-plus"></i> Cadastre Admin
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 @endsection

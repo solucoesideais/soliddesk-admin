@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Modules\Administrators\CreatesAdministratorsForm;
-use App\Modules\Administrators\StoresAdministrators;
+use App\Modules\Administrators\DeletesAdministrators;
 use App\Modules\Administrators\DisplaysAdministrators;
-use App\Modules\Administrators\resources\DeletesAdministrators;
+use App\Modules\Administrators\StoresAdministrators;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/administrators', DisplaysAdministrators::class);
 Route::get('/administrators/create', CreatesAdministratorsForm::class);
