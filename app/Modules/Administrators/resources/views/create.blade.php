@@ -2,7 +2,7 @@
 <script src="{{ asset('js/modules/administrators.js') }}"></script>
 @endpush
 
-<div class="modal fade" id="cadastreadmin" tabindex="-1" role="dialog" aria-labelledby="cadastreadmin" aria-hidden="true">
+<div class="modal fade" id="register-admin" tabindex="-1" role="dialog" aria-labelledby="register-admin" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <form action="/administrators" method="post" class="was-validated">

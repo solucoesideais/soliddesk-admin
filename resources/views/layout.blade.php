@@ -106,7 +106,16 @@
     <div class="container-fluid mt-15">
       <div id="ui-view" style="opacity: 1;">
         <div class="animated fadeIn">
-          @yield('content')
+            @if(session('success'))
+              <div class="row col">
+                <div class="alert alert-success">
+                    <i class="fa fa-check"></i>
+                    {{ session('success') }}
+                </div>
+              </div>
+            @endif
+
+            @yield('content')
         </div>
       </div>
     </div>

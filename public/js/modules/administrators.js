@@ -1,3 +1,3 @@
 jQuery(document).ready(function () {
-    $('#cadastreadmin').modal('show');
+    $('#register-admin').modal('show');
 });

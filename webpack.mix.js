@@ -14,4 +14,5 @@ let mix = require('laravel-mix');
 mix.js('resources/assets/js/app.js', 'public/js')
 mix.copy('resources/assets/js/jQuery/menu.js', 'public/js/menu.js')
     .copy('app/Modules/Administrators/resources/js/administrators.js', 'public/js/modules/administrators.js')
+    .copy('app/Modules/Departments/resources/js/departments.js', 'public/js/modules/departments.js')
     .sass('resources/assets/sass/style.scss', 'public/css');
