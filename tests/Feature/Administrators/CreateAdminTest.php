@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Admin;
+namespace Tests\Feature\Administrators;
 
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Hash;
@@ -14,6 +14,19 @@ class CreateAdminTest extends TestCase
 
     /**
      * @test
+     */
+    public function an_admin_can_see_the_create_admin_form()
+    {
+        $this->get('/administrators/create')
+            ->assertSuccessful()
+            ->assertSee('name="name"')
+            ->assertSee('name="email"')
+            ->assertSee('name="password"');
+    }
+
+    /**
+     * @test
+     * @group f
      */
     public function an_admin_can_create_another_admin()
     {
