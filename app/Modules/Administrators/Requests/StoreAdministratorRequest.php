@@ -23,7 +23,7 @@ class StoreAdministratorRequest extends BaseFormRequest implements Baggable
         ];
     }
 
-    public function convertsToBag()
+    public function convertsToBag(): AdministratorBag
     {
         return new AdministratorBag(
             $this->validated()
