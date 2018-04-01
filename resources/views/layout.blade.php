@@ -30,7 +30,7 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
         aria-expanded="false">
         <img src="{{ asset('images/avatar.png') }}" class="img-avatar">
-        <span class="name"> John Doe</span>
+        <span class="name">{{ auth()->user()->name }}</span>
       </a>
       <div class="dropdown-menu dropdown-menu-right">
         <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>

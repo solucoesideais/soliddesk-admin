@@ -1270,16 +1270,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/solucoesideais/soliddesk-library.git",
-                "reference": "55e6bdf9fe21bfd4896754e295576da56ee11f6c"
+                "reference": "10a8e451de6c7f89933b3049aa7586213bb3d260"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solucoesideais/soliddesk-library/zipball/55e6bdf9fe21bfd4896754e295576da56ee11f6c",
-                "reference": "55e6bdf9fe21bfd4896754e295576da56ee11f6c",
+                "url": "https://api.github.com/repos/solucoesideais/soliddesk-library/zipball/10a8e451de6c7f89933b3049aa7586213bb3d260",
+                "reference": "10a8e451de6c7f89933b3049aa7586213bb3d260",
                 "shasum": ""
             },
             "require": {
-                "illuminate/database": "~5.6"
+                "laravel/framework": "~5.6"
             },
             "type": "library",
             "extra": {
@@ -1299,7 +1299,7 @@
                 "source": "https://github.com/solucoesideais/soliddesk-library/tree/master",
                 "issues": "https://github.com/solucoesideais/soliddesk-library/issues"
             },
-            "time": "2018-04-01T19:51:37+00:00"
+            "time": "2018-04-01T21:06:19+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
