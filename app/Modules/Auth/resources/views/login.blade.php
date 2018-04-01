@@ -43,7 +43,7 @@
                     <button type="submit" class="btn btn-primary px-4">Login</button>
                   </div>
                   <div class="col-6 text-right">
-                    <a href="/password/reset" class="btn btn-link px-0">Recuperar senhar</a>
+                    <a href="/password/reset" class="btn btn-link px-0">Esqueceu sua senha?</a>
                   </div>
                 </div>
               </form>

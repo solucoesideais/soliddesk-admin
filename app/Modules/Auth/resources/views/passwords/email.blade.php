@@ -13,7 +13,7 @@
             <div class="card-body">
               <form action="/password/email" method="post">
                 @csrf
-                <h1>Recuperar senha</h1>
+                <h1>Esqueceu sua senha?</h1>
                 <p class="text-muted">Digite seu email</p>
                 <div class="input-group mb-4">
                   <div class="input-group-prepend">
@@ -31,6 +31,15 @@
                     </div>
                   </div>
                 @endif
+
+                @if(session('success'))
+                  <div class="row">
+                    <div class="col">
+                      <div class="alert alert-success" role="alert">
+                          {{ session('success') }}
+                      </div>
+                  </div>
+               @endif
 
                 <div class="row">
                   <div class="col-6">
