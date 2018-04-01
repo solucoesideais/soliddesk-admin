@@ -50,28 +50,28 @@
     <nav class="sidebar-nav">
       <ul class="nav">
         <li class="nav-item open">
-          <a class="nav-link active" href="main.html"><i class="icon-speedometer"></i> Dashboard</a>
+          <a class="nav-link active" href="/home"><i class="icon-speedometer"></i> Dashboard</a>
         </li>
         <li class="nav-title">
           Gerenciar
         </li>
         <li class="nav-item">
-          <a href="admin.html" class="nav-link"><i class="icon-wrench"></i> Admin</a>
+          <a href="/administrators" class="nav-link"><i class="icon-wrench"></i> Admin</a>
         </li>
         <li class="nav-item">
-          <a href="support.html" class="nav-link"><i class="icon-support"></i> Técnico</a>
+          <a href="/support" class="nav-link"><i class="icon-support"></i> Técnico</a>
         </li>
         <li class="nav-item">
-          <a href="department.html" class="nav-link"><i class="icon-tag"></i> Departamento</a>
+          <a href="/department" class="nav-link"><i class="icon-tag"></i> Departamento</a>
         </li>
         <li class="nav-item">
-          <a href="company.html" class="nav-link"><i class="icon-briefcase"></i> Empresa</a>
+          <a href="/company" class="nav-link"><i class="icon-briefcase"></i> Empresa</a>
         </li>
         <li class="nav-item">
-          <a href="manager.html" class="nav-link"><i class="icon-pencil"></i> Gestor</a>
+          <a href="/manager" class="nav-link"><i class="icon-pencil"></i> Gestor</a>
         </li>
         <li class="nav-item">
-          <a href="user.html" class="nav-link"><i class="icon-user"></i> Usuário</a>
+          <a href="/user" class="nav-link"><i class="icon-user"></i> Usuário</a>
         </li>
         <li class="divider"></li>
         <li class="nav-title">
