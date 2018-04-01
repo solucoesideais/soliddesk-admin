@@ -5,7 +5,7 @@
 <div class="modal fade" id="cadastreadmin" tabindex="-1" role="dialog" aria-labelledby="cadastreadmin" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <form action="/administrators" method="post">
+      <form action="/administrators" method="post" class="was-validated">
         @csrf
 
         <div class="modal-header">
@@ -23,7 +23,7 @@
                   <i class="fa fa-user"></i>
                 </span>
               </div>
-              <input type="text" id="name" name="name" class="form-control" placeholder="Nome" required> 
+              <input required type="text" value="{{ old('name') }}" id="name" name="name" class="form-control" placeholder="Nome"> 
               @include('components.field', ['field' => 'name'])
             </div>
           </div>
@@ -34,7 +34,7 @@
                   <i class="fa fa-envelope"></i>
                 </span>
               </div>
-              <input type="email" id="email" name="email" class="form-control" placeholder="Email">
+              <input required type="email" value="{{ old('email') }}" id="email" name="email" class="form-control" placeholder="Email">
               @include('components.field', ['field' => 'email'])
             </div>
           </div>
@@ -45,7 +45,8 @@
                   <i class="fa fa-asterisk"></i>
                 </span>
               </div>
-              <input type="password" id="password" name="password" class="form-control" placeholder="Password">
+              <input required type="password" value="{{ old('password') }}" id="password" name="password" class="form-control" placeholder="Password">
+              @include('components.field', ['field' => 'password'])
             </div>
           </div>
         </div>

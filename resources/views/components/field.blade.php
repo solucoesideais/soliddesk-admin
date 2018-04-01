@@ -1,9 +1,5 @@
 @if($errors->form->first($field))
-    <div class="row">
-        <div class="col">
-            <div class="alert alert-danger" role="alert">
+            <div class="invalid-feedback" style="display: block" role="alert">
                 {{ $errors->form->first($field) }}
             </div>
-        </div>
-    </div>
 @endif
