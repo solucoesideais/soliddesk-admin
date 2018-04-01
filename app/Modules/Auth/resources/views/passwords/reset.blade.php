@@ -17,7 +17,7 @@
                 <p class="text-muted">Escolha sua nova senha</p>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="icon-user"></i></span>
+                    <span class="input-group-text"><i class="icon-envelope"></i></span>
                   </div>
                   <input required id="inputError2" type="email" class="form-control is-invalid" placeholder="Email" name="email">
                 </div>

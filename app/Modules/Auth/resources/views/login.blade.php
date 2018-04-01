@@ -17,7 +17,7 @@
                 <p class="text-muted">Entre na sua conta</p>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="icon-user"></i></span>
+                    <span class="input-group-text"><i class="icon-envelope"></i></span>
                   </div>
                   <input required type="text" class="form-control" placeholder="Email" name="email">
                 </div>

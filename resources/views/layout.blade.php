@@ -1,7 +1,14 @@
 @extends('base')
 
 @section('page')
-<div  class="app header-fixed sidebar-fixed aside-menu-fixed pace-done">
+<style type=text/css>
+.mt-15{
+  margin-top: 15px;
+}
+
+</style>
+
+<div  class="app header-fixed sidebar-fixed pace-done">
   <div class="pace  pace-inactive">
     <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
       <div class="pace-progress-inner">
@@ -94,16 +101,15 @@
       </ul>
     </nav>
   </div>
-</div>
 
-<main class="main">
-<div class="container-fluid">
-  <div id="ui-view" style="opacity: 1;">
-    <div class="animated fadeIn">
-      @yield('content')
+  <main class="main">
+    <div class="container-fluid mt-15">
+      <div id="ui-view" style="opacity: 1;">
+        <div class="animated fadeIn">
+          @yield('content')
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-</main>
+  </main>
 </div>
 @endsection
