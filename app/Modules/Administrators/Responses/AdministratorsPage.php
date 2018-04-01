@@ -20,7 +20,7 @@ class AdministratorsPage
 
     public function view()
     {
-        return view('administrators::manage')
+        return view('administrators::index')
             ->with('administrators', $this->administrator->paginate(10))
             ->with('creating', $this->creating);
     }

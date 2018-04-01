@@ -62,16 +62,16 @@
           <a href="/support" class="nav-link"><i class="icon-support"></i> Técnico</a>
         </li>
         <li class="nav-item">
-          <a href="/department" class="nav-link"><i class="icon-tag"></i> Departamento</a>
+          <a href="/departments" class="nav-link"><i class="icon-tag"></i> Departamento</a>
         </li>
         <li class="nav-item">
-          <a href="/company" class="nav-link"><i class="icon-briefcase"></i> Empresa</a>
+          <a href="/companies" class="nav-link"><i class="icon-briefcase"></i> Empresa</a>
         </li>
         <li class="nav-item">
-          <a href="/manager" class="nav-link"><i class="icon-pencil"></i> Gestor</a>
+          <a href="/managers" class="nav-link"><i class="icon-pencil"></i> Gestor</a>
         </li>
         <li class="nav-item">
-          <a href="/user" class="nav-link"><i class="icon-user"></i> Usuário</a>
+          <a href="/users" class="nav-link"><i class="icon-user"></i> Usuário</a>
         </li>
         <li class="divider"></li>
         <li class="nav-title">
