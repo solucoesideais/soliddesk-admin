@@ -9,7 +9,7 @@ use Library\Eloquent\Auth\Administrator;
 use Tests\Concerns\AuthenticatesAdmin;
 use Tests\TestCase;
 
-class ListAdminTest extends TestCase
+class DeleteAdminTest extends TestCase
 {
     use AuthenticatesAdmin;
 
@@ -18,16 +18,17 @@ class ListAdminTest extends TestCase
      */
     public function an_admin_can_see_the_create_admin_form()
     {
-        $administrators = create(Administrator::class, [], 3);
+        $administrator = create(Administrator::class);
 
-        $response = $this->get('/administrators')
-            ->assertSuccessful();
+        $this->delete("/administrators/$administrator->id")
+            ->assertStatus(302)
+            ->assertRedirect('/administrators');
 
-        foreach ($administrators as $administrator) {
-            $response->assertSeeText($administrator->name)
-                ->assertSeeText($administrator->email)
-                ->assertSee("/administrators/$administrator->id/edit");
-        }
+        $this->assertSoftDeleted('administrators', [
+            'id' => $administrator->id,
+            'email' => $administrator->email
+        ]);
+
     }
 
     /**
