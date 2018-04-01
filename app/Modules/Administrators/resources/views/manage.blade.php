@@ -1,5 +1,11 @@
 @extends('layout') @section('content')
 
+@if($creating)
+    @push('scripts')
+      <script src="{{ asset('js/modules/administrators.js') }}"></script>
+    @endpush
+@endif
+
 <div class="row">
   <div class="col-lg">
     <div class="card card-accent-primary">
@@ -17,86 +23,16 @@
             </tr>
           </thead>
           <tbody>
+            @foreach($administrators as $administrator)
             <tr>
-              <td>Samppa Nori</td>
-              <td>johndoe@email.com</td>
-              <td>2012/01/21</td>
+              <td>{{ $administrator->name }}</td>
+              <td>{{ $administrator->email }}</td>
+              <td>{{ $administrator->created_at }}</td>
               <td><a href="#">
                 <i class="text-danger fa fa-trash"></i></a>
-              </td> 
+              </td>
             </tr>
-            <tr>
-              <td>Estavan Lykos</td>
-              <td>johndoe@email.com</td>
-              <td>2012/01/21</td>
-              <td><a href="#">
-                <i class="text-danger fa fa-trash"></i></a>
-              </td> 
-            </tr>
-            <tr>
-              <td>Chetan Mohamed</td>
-              <td>johndoe@email.com</td>
-              <td>2012/01/21</td>
-              <td><a href="#">
-                  <i class="text-danger fa fa-trash"></i></a>
-                </td> 
-            </tr>
-            <tr>
-              <td>Derick Maximinus</td>
-              <td>johndoe@email.com</td>
-              <td>2012/01/21</td>
-              <td><a href="#">
-                  <i class="text-danger fa fa-trash"></i></a>
-                </td> 
-            </tr>
-            <tr>
-              <td>Friderik Dávid</td>
-              <td>johndoe@email.com</td>
-              <td>2012/01/21</td>
-              <td><a href="#">
-                  <i class="text-danger fa fa-trash"></i></a>
-                </td> 
-            </tr>
-            <tr>
-              <td>Friderik Dávid</td>
-              <td>johndoe@email.com</td>
-              <td>2012/01/21</td>
-              <td><a href="#">
-                  <i class="text-danger fa fa-trash"></i></a>
-                </td> 
-            </tr>
-            <tr>
-              <td>Friderik Dávid</td>
-              <td>johndoe@email.com</td>
-              <td>2012/01/21</td>
-              <td><a href="#">
-                  <i class="text-danger fa fa-trash"></i></a>
-                </td> 
-            </tr>
-            <tr>
-              <td>Friderik Dávid</td>
-              <td>johndoe@email.com</td>
-              <td>2012/01/21</td>
-              <td><a href="#">
-                  <i class="text-danger fa fa-trash"></i></a>
-                </td> 
-            </tr>
-            <tr>
-              <td>Friderik Dávid</td>
-              <td>johndoe@email.com</td>
-              <td>2012/01/21</td>
-              <td><a href="#">
-                  <i class="text-danger fa fa-trash"></i></a>
-                </td> 
-            </tr>
-            <tr>
-              <td>Friderik Dávid</td>
-              <td>johndoe@email.com</td>
-              <td>2012/01/21</td>
-              <td><a href="#">
-                  <i class="text-danger fa fa-trash"></i></a>
-                </td> 
-            </tr>
+            @endforeach
           </tbody>
         </table>
         <!-- pagination -->
@@ -125,14 +61,16 @@
         </div>
         <div class="col-6 text-right">
           <!-- button trigger popup -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cadastreadmin"><i class="fa fa-plus"></i>
-            Cadastre Admin
-          </button>
+        <a class="btn btn-primary" href="/administrators/create">
+          <i class="fa fa-plus"></i> Cadastre Admin
+        </a>
           <!-- popup-->
           <div class="modal fade" id="cadastreadmin" tabindex="-1" role="dialog" aria-labelledby="cadastreadmin" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
-                <form action="" method="post">
+                <form action="/administrators" method="post">
+                  @csrf
+
                 <div class="modal-header">
                   <h5 class="modal-title"><i class="fa fa-plus"></i> Novo administrador</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -147,7 +85,8 @@
                               <i class="fa fa-user"></i>
                             </span>
                           </div>
-                          <input type="text" id="name" name="name" class="form-control" placeholder="Nome">
+                          <input type="text" id="name" name="name" class="form-control" placeholder="Nome" required>
+                          @include('components.field', ['field' => 'name'])
                         </div>
                       </div>
                       <div class="form-group">

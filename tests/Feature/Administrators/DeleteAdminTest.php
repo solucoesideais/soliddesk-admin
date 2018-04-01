@@ -16,7 +16,7 @@ class DeleteAdminTest extends TestCase
     /**
      * @test
      */
-    public function an_admin_can_see_the_create_admin_form()
+    public function an_admin_can_delete_another_admin()
     {
         $administrator = create(Administrator::class);
 
@@ -29,43 +29,5 @@ class DeleteAdminTest extends TestCase
             'email' => $administrator->email
         ]);
 
-    }
-
-    /**
-     * @test
-     */
-    public function an_admin_can_create_another_admin()
-    {
-        [$name, $email] = [$this->faker->name, $this->faker->safeEmail];
-
-        $this->post('/administrators', [
-            'name' => $name,
-            'email' => $email,
-            'password' => '123456',
-        ])
-            ->assertStatus(302)
-            ->assertRedirect('/administrators')
-            ->assertSessionHas('success');
-
-        $this->assertDatabaseHas('administrators', [
-            'name' => $name,
-            'email' => $email,
-        ]);
-
-        $this->assertTrue(
-            Hash::check('123456',
-                Administrator::where('email', $email)->first()->password
-            )
-        );
-    }
-
-    /**
-     * @test
-     */
-    public function test_validation()
-    {
-        $this->post('/administrators')
-            ->assertStatus(302)
-            ->assertSessionHasErrorsIn(BaseFormRequest::FORM_ERROR_BAG, ['name', 'email', 'password']);
     }
 }
