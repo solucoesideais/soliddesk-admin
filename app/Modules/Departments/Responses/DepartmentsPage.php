@@ -4,7 +4,7 @@ namespace App\Modules\Departments\Responses;
 
 use Library\Eloquent\Department;
 
-class ManageDepartmentsPage
+class DepartmentsPage
 {
     /**
      * @var Department

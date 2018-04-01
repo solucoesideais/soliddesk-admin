@@ -4,7 +4,7 @@ namespace App\Modules\Administrators\Responses;
 
 use Library\Eloquent\Auth\Administrator;
 
-class ManageAdministratorsPage
+class AdministratorsPage
 {
     /**
      * @var Administrator
