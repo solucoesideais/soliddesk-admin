@@ -12,7 +12,6 @@ class ListUserTest extends TestCase
 
     /**
      * @test
-     * @group f
      */
     public function an_admin_can_list_users()
     {

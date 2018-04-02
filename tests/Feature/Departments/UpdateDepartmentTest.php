@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Administrators;
+namespace Tests\Feature\Departments;
 
 use App\Http\Requests\BaseFormRequest;
 use Illuminate\Foundation\Testing\WithFaker;
