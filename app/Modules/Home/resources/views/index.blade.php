@@ -75,6 +75,7 @@
       ['Company', 'Tickets', {
         role: 'style'
       }],
+      ['JovemPan', 18, '#63c2de'],
       ['Box', 10, '#20a8d8'], // RGB value
       ['Cup', 7, '#6610f2'], // English color name
       ['JovemPan', 18, '#6f42c1'],
@@ -84,7 +85,6 @@
       ['JovemPan', 18, '#ffc107'],
       ['Box', 10, '#4dbd74'],
       ['Cup', 7, '#20c997'],
-      ['JovemPan', 18, '#63c2de'],
     ]);
 
     // Optional; add a title and set the width and height of the chart
