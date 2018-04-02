@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/departments', DisplaysDepartments::class);
 Route::get('/departments/create', CreatesDepartmentsForm::class);
-Route::get('/departments/create', EditDepartmentsForm::class);
+Route::get('/departments/{department}/edit', EditDepartmentsForm::class);
 Route::post('/departments', StoresDepartments::class);
 Route::delete('/departments/{department}', DeletesDepartments::class);
 Route::get('/departments/{department}/companies', DepartmentCompaniesForm::class);

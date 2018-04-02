@@ -21,6 +21,7 @@ class DepartmentsPage
         return view('departments::index')
             ->with('departments', $this->department->paginate(10))
             ->with('creating', false)
+            ->with('editing', false)
             ->with('linkingCompanies', false);
     }
 
@@ -34,7 +35,7 @@ class DepartmentsPage
     {
       return $this->index()
             ->with('editing', true)
-            ->with('record', $department)
+            ->with('record', $department);
     }
 
     public function companies()
