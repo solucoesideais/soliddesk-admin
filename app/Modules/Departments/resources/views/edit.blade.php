@@ -13,7 +13,7 @@
           @method('patch')
 
           <div class="modal-header">
-            <h5 class="modal-title"><i class="fa fa-plus"></i> Novo departamento</h5>
+            <h5 class="modal-title"><i class="fa fa-pencil"></i> Editar departamento</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
