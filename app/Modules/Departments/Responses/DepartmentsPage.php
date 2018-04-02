@@ -30,6 +30,13 @@ class DepartmentsPage
             ->with('creating', true);
     }
 
+    public function edit(Department $department)
+    {
+      return $this->index()
+            ->with('editing', true)
+            ->with('record', $department)
+    }
+
     public function companies()
     {
         return $this->index()
