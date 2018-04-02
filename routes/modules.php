@@ -6,3 +6,4 @@ Route::group([], app_path('Modules/Auth/resources/routes.php'));
 Route::group(['middleware' => 'auth'], app_path('Modules/Home/resources/routes.php'));
 Route::group(['middleware' => 'auth'], app_path('Modules/Administrators/resources/routes.php'));
 Route::group(['middleware' => 'auth'], app_path('Modules/Departments/resources/routes.php'));
+Route::group(['middleware' => 'auth'], app_path('Modules/Users/resources/routes.php'));

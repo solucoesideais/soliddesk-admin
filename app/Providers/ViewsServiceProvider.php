@@ -13,6 +13,7 @@ class ViewsServiceProvider extends ServiceProvider
         View::addNamespace('home', app_path('Modules/Home/resources/views'));
         View::addNamespace('administrators', app_path('Modules/Administrators/resources/views'));
         View::addNamespace('departments', app_path('Modules/Departments/resources/views'));
+        View::addNamespace('users', app_path('Modules/Users/resources/views'));
 
     }
 }
