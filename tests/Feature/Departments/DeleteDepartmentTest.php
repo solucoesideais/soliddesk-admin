@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Administrators;
+namespace Tests\Feature\Departments;
 
 use Library\Eloquent\Department;
 use Tests\Concerns\AuthenticatesAdmin;

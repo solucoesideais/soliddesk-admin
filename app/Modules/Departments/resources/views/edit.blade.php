@@ -26,7 +26,7 @@
                       <i class="fa fa-tag"></i>
                     </span>
                   </div>
-                  <input type="text" id="name" name="name" class="form-control" placeholder="Departamento">
+                  <input required type="text" id="name" name="name" class="form-control" value="{{ $record->name }}" placeholder="Departamento">
                 </div>
               </div>
           </div>
