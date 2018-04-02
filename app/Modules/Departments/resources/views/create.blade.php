@@ -1,5 +1,8 @@
 @push('scripts')
   <script src="{{ asset('js/modules/departments.js') }}"></script>
+  <script type="text/javascript">
+      Departments.create();
+  </script>
 @endpush
 
 <div class="modal fade" id="register-department" tabindex="-1" role="dialog" aria-labelledby="register-department" aria-hidden="true">

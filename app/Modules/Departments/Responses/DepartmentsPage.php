@@ -20,12 +20,19 @@ class DepartmentsPage
     {
         return view('departments::index')
             ->with('departments', $this->department->paginate(10))
-            ->with('creating', false);
+            ->with('creating', false)
+            ->with('linkingCompanies', false);
     }
 
     public function create()
     {
         return $this->index()
             ->with('creating', true);
+    }
+
+    public function companies()
+    {
+        return $this->index()
+            ->with('linkingCompanies', true);
     }
 }

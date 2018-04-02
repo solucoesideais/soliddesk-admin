@@ -6,6 +6,10 @@
   @include('departments::create')
 @endif
 
+@if($linkingCompanies)
+  @include('departments::companies')
+@endif
+
 <div class="row">
   <div class="col-lg">
     <div class="card card-accent-primary">
@@ -27,7 +31,7 @@
               <td>{{ $department->name }}</td>
               <td>
                 <!-- button trigger modal company -->
-                <a href="#" class="btn btn-success" data-toggle="modal" data-target="#add-company">
+                <a href="/departments/{{ $department->id }}/companies" class="btn btn-success">
                   <i class="fa fa-plus"></i>
                   Empresas
                 </a>
@@ -56,48 +60,4 @@
   </div>
 </div>
 
-<!-- modal add-company -->
-<div class="modal fade" id="add-company" tabindex="-1" role="dialog" aria-labelledby="add-company" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <form action="" method="post">
-        <div class="modal-header">
-          <h5 class="modal-title">
-            <i class="fa fa-plus"></i> Vincular ....</h5>
-          <input class="ml-5 form-control-sm" type="text" id="search-input" onkeyup="search()" placeholder="Search..">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <table class="table table-responsive-sm">
-            <thead>
-              <tr>
-                <th><input type="checkbox"> Nome</th>
-                <th>Nome</th>
-                <th>Nome</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <input type="checkbox"> Empresa 1</td>
-                <td>
-                  <input type="checkbox"> Empresa 2</td>
-                <td>
-                  <input type="checkbox"> Empresa 3</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="modal-footer">
-          <div class="form-group form-actions">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-primary">Salvar</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
 @endsection
