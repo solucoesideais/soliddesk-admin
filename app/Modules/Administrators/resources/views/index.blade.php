@@ -11,6 +11,10 @@
     <div class="card card-accent-primary">
       <div class="card-header">
         <i class="fa fa-wrench"></i> Administradores
+        <!-- button trigger popup -->
+        <a class="btn btn-primary float-right" href="/administrators/create">
+          <i class="fa fa-plus"></i> Novo Administrador
+        </a>
       </div>
       <div class="card-body">
         <table class="table table-responsive-sm">
@@ -39,12 +43,6 @@
         <div class="row">
           <div class="col-6">
               {{ $administrators->render() }}
-          </div>
-          <div class="col-6 text-right">
-          <!-- button trigger popup -->
-            <a class="btn btn-primary" href="/administrators/create">
-              <i class="fa fa-plus"></i> Novo Administrador
-            </a>
           </div>
         </div>
       </div>
