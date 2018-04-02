@@ -87,7 +87,7 @@
           <table class="table table-responsive-sm">
             <thead>
               <tr>
-                <th>Nome</th>
+                <th><input type="checkbox"> Nome</th>
                 <th>Nome</th>
                 <th>Nome</th>
               </tr>
