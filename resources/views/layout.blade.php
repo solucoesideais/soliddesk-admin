@@ -70,9 +70,6 @@
         <li class="nav-item">
           <a href="/managers" class="nav-link"><i class="icon-pencil"></i> Gestor</a>
         </li>
-        <li class="nav-item">
-          <a href="/users" class="nav-link"><i class="icon-user"></i> Usuário</a>
-        </li>
         <li class="divider"></li>
         <li class="nav-title">
           Relatórios
