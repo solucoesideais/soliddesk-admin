@@ -18,8 +18,9 @@ class CreateDepartmentTest extends TestCase
      */
     public function an_admin_can_see_the_create_department_form()
     {
-        $this->get('/administrators/create')
+        $this->get('/departments/create')
             ->assertSuccessful()
+            ->assertViewHas('creating', true)
             ->assertSee('name="name"');
     }
 

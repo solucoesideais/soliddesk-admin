@@ -1,4 +1,10 @@
-@extends('layout') @section('content') @if($creating) @include('departments::create') @endif
+@extends('layout')
+
+@section('content')
+
+@if($creating)
+  @include('departments::create')
+@endif
 
 <div class="row">
   <div class="col-lg">
@@ -16,8 +22,9 @@
             </tr>
           </thead>
           <tbody>
+            @foreach($departments as $department)
             <tr>
-              <td>Samppa Nori</td>
+              <td>{{ $department->name }}</td>
               <td>
                 <!-- button trigger modal company -->
                 <a href="#" class="btn btn-success" data-toggle="modal" data-target="#add-company">
@@ -26,43 +33,22 @@
                 </a>
               </td>
               <td>
-                <a href="#">
-                  <i class="text-danger fa fa-trash fa-lg"></i>
-                </a>
+                @include('components.delete', ['action' => "/departments/$department->id"])
               </td>
             </tr>
+            @endforeach
           </tbody>
         </table>
         <!-- pagination -->
         <div class="row">
           <div class="col-6">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#">Prev</a>
-              </li>
-              <li class="page-item active">
-                <a class="page-link" href="#">1</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">2</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">3</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">4</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-              </li>
-            </ul>
+            {{ $departments->render() }}
           </div>
           <div class="col-6 text-right">
             <!-- button trigger modal register-->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#register-department">
-              <i class="fa fa-plus"></i>
-              Cadastre Departamento
-            </button>
+            <a class="btn btn-primary" href="/departments/create">
+              <i class="fa fa-plus"></i> Novo Departamento
+            </a>
           </div>
         </div>
       </div>

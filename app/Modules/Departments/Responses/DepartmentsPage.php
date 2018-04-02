@@ -11,24 +11,21 @@ class DepartmentsPage
      */
     private $department;
 
-    private $creating = false;
-
     public function __construct(Department $department)
     {
         $this->department = $department;
     }
 
-    public function view()
+    public function index()
     {
         return view('departments::index')
             ->with('departments', $this->department->paginate(10))
-            ->with('creating', $this->creating);
+            ->with('creating', false);
     }
 
-    public function creating(): self
+    public function create()
     {
-        $this->creating = true;
-
-        return $this;
+        return $this->index()
+            ->with('creating', true);
     }
 }

@@ -18,17 +18,16 @@ class AdministratorsPage
         $this->administrator = $administrator;
     }
 
-    public function view()
+    public function index()
     {
         return view('administrators::index')
             ->with('administrators', $this->administrator->paginate(10))
             ->with('creating', $this->creating);
     }
 
-    public function creating(): self
+    public function create()
     {
-        $this->creating = true;
-
-        return $this;
+        return $this->index()
+            ->with('creating', true);
     }
 }

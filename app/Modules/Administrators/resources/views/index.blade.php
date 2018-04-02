@@ -29,14 +29,7 @@
               <td>{{ $administrator->email }}</td>
               <td>{{ $administrator->created_at }}</td>
               <td>
-                  <form action="/administrators/{{ $administrator->id }}" method="post">
-                      @csrf
-                      @method('delete')
-
-                      <button class="btn btn-link" type="submit" href="#">
-                          <i class="text-danger fa fa-trash fa-lg"></i>
-                      </button>
-                  </form>
+                @include('components.delete', ['action' => "/administrators/$administrator->id"])
               </td>
             </tr>
             @endforeach
@@ -50,7 +43,7 @@
           <div class="col-6 text-right">
           <!-- button trigger popup -->
             <a class="btn btn-primary" href="/administrators/create">
-              <i class="fa fa-plus"></i> Cadastre Admin
+              <i class="fa fa-plus"></i> Novo Administrador
             </a>
           </div>
         </div>

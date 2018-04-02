@@ -20,6 +20,7 @@ class CreateAdminTest extends TestCase
     {
         $this->get('/administrators/create')
             ->assertSuccessful()
+            ->assertViewHas('creating', true)
             ->assertSee('name="name"')
             ->assertSee('name="email"')
             ->assertSee('name="password"');

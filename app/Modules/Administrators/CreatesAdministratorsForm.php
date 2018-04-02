@@ -9,6 +9,6 @@ class CreatesAdministratorsForm extends Controller
 {
     public function __invoke(AdministratorsPage $page)
     {
-        return $page->creating()->view();
+        return $page->create();
     }
 }

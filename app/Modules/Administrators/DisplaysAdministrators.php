@@ -11,6 +11,6 @@ class DisplaysAdministrators extends Controller
 {
     public function __invoke(AdministratorsPage $page)
     {
-        return $page->view();
+        return $page->index();
     }
 }
