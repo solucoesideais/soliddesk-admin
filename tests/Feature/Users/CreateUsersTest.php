@@ -11,7 +11,6 @@ class CreateUsersTest extends TestCase
 
     /**
      * @test
-     * @group f
      */
     public function an_admin_can_see_the_create_user_form()
     {

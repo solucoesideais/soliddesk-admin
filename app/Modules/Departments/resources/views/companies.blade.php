@@ -29,7 +29,7 @@
                         <tbody>
                         <tr>
                             <td>
-                                <input type="checkbox"> Empresa 1</td>
+                                <input name="companies[]" type="checkbox"> Empresa 1</td>
                             <td>
                                 <input type="checkbox"> Empresa 2</td>
                             <td>
