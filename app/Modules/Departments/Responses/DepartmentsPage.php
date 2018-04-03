@@ -2,6 +2,7 @@
 
 namespace App\Modules\Departments\Responses;
 
+use Library\Eloquent\Company;
 use Library\Eloquent\Department;
 
 class DepartmentsPage
@@ -33,14 +34,16 @@ class DepartmentsPage
 
     public function edit(Department $department)
     {
-      return $this->index()
+        return $this->index()
             ->with('editing', true)
             ->with('record', $department);
     }
 
-    public function companies()
+    public function companies(Department $department, Company $company)
     {
         return $this->index()
-            ->with('linkingCompanies', true);
+            ->with('linkingCompanies', true)
+            ->with('record', $department)
+            ->with('companies', $company->all());
     }
 }
