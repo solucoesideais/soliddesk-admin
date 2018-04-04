@@ -61,12 +61,6 @@
             {{ $departments->render() }}
           </div>
           <div class="col-6 text-right">
-            <!-- button trigger modal register-->
-            <!--
-              <a class="btn btn-primary" href="/departments/create">
-              <i class="fa fa-plus"></i> Novo Departamento
-            </a>
-          -->
           </div>
         </div>
       </div>

@@ -3,5 +3,6 @@
     "/css/style.css": "/css/style.css",
     "/js/menu.js": "/js/menu.js",
     "/js/modules/administrators.js": "/js/modules/administrators.js",
-    "/js/modules/departments.js": "/js/modules/departments.js"
+    "/js/modules/departments.js": "/js/modules/departments.js",
+    "/js/modules/companies.js": "/js/modules/companies.js"
 }

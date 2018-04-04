@@ -56,19 +56,19 @@
           Gerenciar
         </li>
         <li class="nav-item">
-          <a href="/administrators" class="nav-link"><i class="icon-wrench"></i> Admin</a>
+          <a href="/administrators" class="nav-link"><i class="icon-wrench"></i> Administradores</a>
         </li>
         <li class="nav-item">
-          <a href="/support" class="nav-link"><i class="icon-support"></i> Técnico</a>
+          <a href="/support" class="nav-link"><i class="icon-shield"></i> Técnicos</a>
         </li>
         <li class="nav-item">
-          <a href="/departments" class="nav-link"><i class="icon-tag"></i> Departamento</a>
+          <a href="/departments" class="nav-link"><i class="icon-tag"></i> Departamentos</a>
         </li>
         <li class="nav-item">
-          <a href="/companies" class="nav-link"><i class="icon-briefcase"></i> Empresa</a>
+          <a href="/companies" class="nav-link"><i class="icon-briefcase"></i> Empresas</a>
         </li>
         <li class="nav-item">
-          <a href="/managers" class="nav-link"><i class="icon-pencil"></i> Gestor</a>
+          <a href="/users" class="nav-link"><i class="icon-people"></i> Usuários</a>
         </li>
         <li class="divider"></li>
         <li class="nav-title">
