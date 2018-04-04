@@ -20,8 +20,7 @@ class UsersPage
     {
         return view('users::index')
             ->with('users', $this->user->paginate(10))
-            ->with('creating', false)
-            ->with('editing', false);
+            ->with('creating', false);
     }
 
     public function create()
