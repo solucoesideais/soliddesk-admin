@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Library\Eloquent\Department;
 
-class LinkDepartmentsToCompanies extends Controller
+class LinkCompaniesToDepartment extends Controller
 {
     public function __invoke(Department $department, Request $request)
     {
