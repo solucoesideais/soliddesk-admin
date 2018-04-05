@@ -42,7 +42,7 @@
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fa fa-asterisk"></i>
+                  <i class="fa fa-lock"></i>
                 </span>
               </div>
               <input required type="password" value="{{ old('password') }}" id="password" name="password" class="form-control" placeholder="Password">

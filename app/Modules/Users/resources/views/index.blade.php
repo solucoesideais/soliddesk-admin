@@ -1,4 +1,10 @@
-@extends('layout') @section('content') @if($creating) @include('users::create') @endif
+@extends('layout')
+
+@section('content')
+
+@if($creating)
+  @include('users::create')
+@endif
 
 <div class="row">
   <div class="col-lg">
@@ -26,7 +32,7 @@
             <tr>
               <td>{{ $user->name }}</td>
               <td>{{ $user->email }}</td>
-              <td>{{ $user->company }}</td>
+              <td>{{ $user->company->name }}</td>
               <td>{{ $user->created_at }}</td>
               <td>
                 <div class="row">

@@ -26,7 +26,7 @@
 
                 <div class="modal-header">
                     <h5 class="modal-title">
-                        <i class="fa fa-plus"></i> Vincular <em>{{ $record->name }}</em> a empresas</h5>
+                        <i class="fa fa-plus"></i> Adicionar departamentos à <em>{{ $record->name }}</em></h5>
                     <div class="close">
                         <input class="form-control-sm" type="text" id="search-input" onkeyup="search()" placeholder="Search...">
                         <a class="modal-close" href="/companies">

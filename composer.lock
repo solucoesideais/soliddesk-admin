@@ -922,16 +922,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.11",
+            "version": "v2.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "5da4d3c796c275c55f057af5a643ae297d96b4d8"
+                "reference": "258c89a6b97de7dfaf5b8c7607d0478e236b04fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/5da4d3c796c275c55f057af5a643ae297d96b4d8",
-                "reference": "5da4d3c796c275c55f057af5a643ae297d96b4d8",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/258c89a6b97de7dfaf5b8c7607d0478e236b04fb",
+                "reference": "258c89a6b97de7dfaf5b8c7607d0478e236b04fb",
                 "shasum": ""
             },
             "require": {
@@ -966,7 +966,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2017-09-27T21:40:39+00:00"
+            "time": "2018-04-04T21:24:14+00:00"
         },
         {
             "name": "psr/container",
@@ -1270,12 +1270,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/solucoesideais/soliddesk-library.git",
-                "reference": "a4c2aa881a8bae1c05d8f5cfc61490b070d9d0a2"
+                "reference": "8b9f93336ead7d1791b66c5a5ac39f34a3a9d9f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solucoesideais/soliddesk-library/zipball/a4c2aa881a8bae1c05d8f5cfc61490b070d9d0a2",
-                "reference": "a4c2aa881a8bae1c05d8f5cfc61490b070d9d0a2",
+                "url": "https://api.github.com/repos/solucoesideais/soliddesk-library/zipball/8b9f93336ead7d1791b66c5a5ac39f34a3a9d9f7",
+                "reference": "8b9f93336ead7d1791b66c5a5ac39f34a3a9d9f7",
                 "shasum": ""
             },
             "require": {
@@ -1299,7 +1299,7 @@
                 "source": "https://github.com/solucoesideais/soliddesk-library/tree/master",
                 "issues": "https://github.com/solucoesideais/soliddesk-library/issues"
             },
-            "time": "2018-04-03T19:21:46+00:00"
+            "time": "2018-04-05T20:03:14+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

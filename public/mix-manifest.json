@@ -2,7 +2,9 @@
     "/js/app.js": "/js/app.js",
     "/css/style.css": "/css/style.css",
     "/js/menu.js": "/js/menu.js",
+    "/js/popup.js": "/js/popup.js",
     "/js/modules/administrators.js": "/js/modules/administrators.js",
     "/js/modules/departments.js": "/js/modules/departments.js",
-    "/js/modules/companies.js": "/js/modules/companies.js"
+    "/js/modules/companies.js": "/js/modules/companies.js",
+    "/js/modules/users.js": "/js/modules/users.js"
 }

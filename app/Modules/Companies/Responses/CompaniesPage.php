@@ -22,13 +22,22 @@ class CompaniesPage
     {
         return view('companies::index')
             ->with('companies', $this->company->paginate(10))
-            ->with('creating', false);
+            ->with('creating', false)
+            ->with('editing', false)
+            ->with('linkingDepartments', false);
     }
 
     public function create()
     {
         return $this->index()
             ->with('creating', true);
+    }
+
+    public function edit(Company $company)
+    {
+        return $this->index()
+            ->with('editing', true)
+            ->with('record', $company);
     }
 
     public function companies(Company $company, Department $department)

@@ -1,16 +1,11 @@
 var Departments = {
-    run: function (element) {
-        jQuery(document).ready(function () {
-            $(element).modal('show');
-        });
-    },
     create: function () {
-        Departments.run('#register-department');
+        Popup.open('#register-department');
     },
     edit: function () {
-      Departments.run('#edit-department');
+        Popup.open('#edit-department');
     },
-    companies: function() {
-        Departments.run('#link-companies');
+    companies: function () {
+        Popup.open('#link-companies');
     }
 };

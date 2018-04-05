@@ -13,6 +13,7 @@ class LinkingDepartmentsToCompanyTest extends TestCase
 
     /**
      * @test
+     * @group f
      */
     public function an_admin_can_open_the_page_to_link_departments_to_company()
     {

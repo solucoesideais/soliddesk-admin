@@ -1,5 +1,8 @@
 @push('scripts')
-<script src="{{ asset('js/modules/users.js') }}"></script>
+  <script src="{{ asset('js/modules/users.js') }}"></script>
+  <script type="text/javascript">
+    Users.create();
+  </script>
 @endpush
 
 <div class="modal fade" id="register-user" tabindex="-1" role="dialog" aria-labelledby="register-user" aria-hidden="true">
@@ -23,7 +26,8 @@
                   <i class="fa fa-user"></i>
                 </span>
               </div>
-              <input required type="text" value="{{ old('name') }}" id="name" name="name" class="form-control" placeholder="Nome"> @include('components.field', ['field' => 'name'])
+              <input required type="text" value="{{ old('name') }}" id="name" name="name" class="form-control" placeholder="Nome">
+              @include('components.field', ['field' => 'name'])
             </div>
           </div>
           <div class="form-group">
@@ -33,37 +37,37 @@
                   <i class="fa fa-envelope"></i>
                 </span>
               </div>
-              <input required type="email" value="{{ old('email') }}" id="email" name="email" class="form-control" placeholder="Email"> @include('components.field', ['field' => 'email'])
+              <input required type="email" value="{{ old('email') }}" id="email" name="email" class="form-control" placeholder="Email">
+              @include('components.field', ['field' => 'email'])
             </div>
           </div>
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fa fa-asterisk"></i>
+                  <i class="fa fa-lock"></i>
                 </span>
               </div>
-              <input required type="password" value="{{ old('password') }}" id="password" name="password" class="form-control" placeholder="Password"> @include('components.field', ['field' => 'password'])
+              <input required type="password" value="{{ old('password') }}" id="password" name="password" class="form-control" placeholder="Password">
+              @include('components.field', ['field' => 'password'])
             </div>
           </div>
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fa fa-asterisk"></i>
+                  <i class="fa fa-briefcase"></i>
                 </span>
               </div>
-              <input required name="company" list="company_name">
-              <datalist id="company_name">
-                <option value="Afghanistan">
-                <option value="Albania">
-                <option value="Algeria">
-                <option value="Andorra">
-                <option value="Armenia">
-                <option value="Australia">
-                <option value="Austria">
-                <option value="Azerbaijan">
-              </datalist>
+              {{--<input class="form-control" required name="company" list="company_name">--}}
+              {{--<datalist id="company_name">--}}
+              <select name="company" class="form-control">
+                @foreach($companies as $company)
+                  <option value="{{ $company->id }}">{{ $company->name }}</option>
+                @endforeach
+              </select>
+              {{--</datalist>--}}
+              @include('components.field', ['field' => 'company'])
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@
 namespace App\Modules\Users\Responses;
 
 use Library\Eloquent\Auth\User;
+use Library\Eloquent\Company;
 
 class UsersPage
 {
@@ -23,9 +24,10 @@ class UsersPage
             ->with('creating', false);
     }
 
-    public function create()
+    public function create(Company $company)
     {
         return $this->index()
-            ->with('creating', true);
+            ->with('creating', true)
+            ->with('companies', $company->all());
     }
 }

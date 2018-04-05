@@ -10,7 +10,7 @@ var Companies = {
   edit: function () {
     Companies.run('#edit-company');
   },
-  companies: function () {
-    Companies.run('#link-companies');
+  departments: function () {
+    Companies.run('#link-departments');
   }
 };

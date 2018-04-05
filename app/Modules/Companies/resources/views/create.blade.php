@@ -30,12 +30,9 @@
             </div>
           </div>
           <div class="form-group">
-            <div class="input-group">
-              <label class="col-form-label" for="file-input">
-                <i class="fa fa-file-photo-o"></i> Anexar logo</label>
-              <div class="col">
-                <input type="file" id="file-input" name="file-input">
-              </div>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" onchange="$(this).next().html('Arquivo selecionado')">
+              <label class="custom-file-label">Selecionar Arquivo</label>
             </div>
           </div>
         </div>

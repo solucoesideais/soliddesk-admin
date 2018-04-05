@@ -6,6 +6,14 @@
   @include('companies::create')
 @endif
 
+@if($editing)
+  @include('companies::edit')
+@endif
+
+@if($linkingDepartments)
+  @include('companies::departments')
+@endif
+
 <div class="row">
   <div class="col-lg">
     <div class="card card-accent-primary">
@@ -27,12 +35,12 @@
           <tbody>
             @foreach($companies as $company)
             <tr>
-              <td style="width: 40%">
-                <img src="http://admin.local.solucoesideais.com.br/images/companyavatar.png" class="img-avatar img-responsive" style="width:8%">
+              <td style="width: 40%; {{ $company->blocked_at !== null ? 'opacity: 0.5' : '' }}">
+                <img src="/images/companyavatar.png" class="img-avatar img-responsive" style="width:8%">
                 {{ $company->name }}</td>
               <td style="width: 40%">
                 <!-- button trigger modal company -->
-                <a href="/companies/{{ $company->id }}/companies" class="btn btn-success">
+                <a href="/companies/{{ $company->id }}/departments" class="btn btn-success">
                   <i class="fa fa-plus"></i>
                   Departamentos
                 </a>
@@ -45,9 +53,15 @@
                   <form action="/companies/{{ $company->id }}/status" method="post">
                     @csrf
                     @method('patch')
+
+                    <input type="hidden" name="block" value="{{ $company->blocked_at === null ? 1 : 0}}">
                 
                     <button class="btn btn-link" type="submit">
+                      @if($company->blocked_at === null)
                         <i class="text-warning fa fa-lock fa-lg"></i>
+                      @else
+                        <i class="text-success fa fa-unlock fa-lg"></i>
+                      @endif
                     </button>
                 </form>
                   @include('components.delete', ['action' => "/companies/$company->id"])

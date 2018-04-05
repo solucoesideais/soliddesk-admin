@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Modules\Administrators\Bags;
+namespace App\Modules\Users\Bags;
 
 use App\Concerns\Bags\HashesPasswords;
 
-class AdministratorBag
+class UserBag
 {
     use HashesPasswords;
 
@@ -22,6 +22,15 @@ class AdministratorBag
     {
         $this->hashPassword();
 
+        $this->company();
+
         return $this->attributes;
+    }
+
+    private function company(): void
+    {
+        $this->attributes['company_id'] = $this->attributes['company'];
+
+        unset($this->attributes['company']);
     }
 }
