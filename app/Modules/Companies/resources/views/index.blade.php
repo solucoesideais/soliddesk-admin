@@ -6,10 +6,6 @@
   @include('companies::create')
 @endif
 
-@if($editing)
-  @include('companies::edit')
-@endif
-
 <div class="row">
   <div class="col-lg">
     <div class="card card-accent-primary">
@@ -31,28 +27,30 @@
           <tbody>
             @foreach($companies as $company)
             <tr>
-              <td>{{ $company->name }} aaaaa </td>
-              <td>
+              <td style="width: 40%">
+                <img src="http://admin.local.solucoesideais.com.br/images/companyavatar.png" class="img-avatar img-responsive" style="width:8%">
+                {{ $company->name }}</td>
+              <td style="width: 40%">
                 <!-- button trigger modal company -->
                 <a href="/companies/{{ $company->id }}/companies" class="btn btn-success">
                   <i class="fa fa-plus"></i>
                   Departamentos
                 </a>
               </td>
-              <td>
+              <td style="width: 20%">
                 <div class="row">
                   <a href="/companies/{{ $company->id }}/edit" class="btn btn-link">
                     <i class="fa fa-pencil fa-lg"></i>
                   </a>
-                  @include('components.delete', ['action' => "/companies/$company->id"])
                   <form action="/companies/{{ $company->id }}/status" method="post">
                     @csrf
                     @method('patch')
                 
                     <button class="btn btn-link" type="submit">
-                        <i class="text-danger fa fa-lock fa-lg"></i>
+                        <i class="text-warning fa fa-lock fa-lg"></i>
                     </button>
                 </form>
+                  @include('components.delete', ['action' => "/companies/$company->id"])
                 </div>
               </td>
             </tr>
@@ -63,9 +61,6 @@
         <div class="row">
           <div class="col-6">
             {{ $companies->render() }}
-          </div>
-          <div class="col-6 text-right">
-            </a>
           </div>
         </div>
       </div>

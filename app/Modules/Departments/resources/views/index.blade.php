@@ -60,8 +60,6 @@
           <div class="col-6">
             {{ $departments->render() }}
           </div>
-          <div class="col-6 text-right">
-          </div>
         </div>
       </div>
     </div>
