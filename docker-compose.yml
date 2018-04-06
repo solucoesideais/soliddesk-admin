@@ -15,6 +15,7 @@ services:
       target: backend
     volumes:
       - .:/var/www
+      - ../library:/var/www/vendor/solid-desk/library
       - /srv/share/composer-cache:/root/.composer/cache
       - /dev/null:/usr/local/etc/php/conf.d/opcache.ini
   app:
@@ -22,6 +23,7 @@ services:
     build: .
     volumes:
       - .:/var/www
+      - ../library:/var/www/vendor/solid-desk/library
       - /dev/null:/usr/local/etc/php/conf.d/opcache.ini
     ports:
       - 80:80

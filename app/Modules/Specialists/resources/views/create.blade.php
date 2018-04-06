@@ -52,21 +52,6 @@
               @include('components.field', ['field' => 'password'])
             </div>
           </div>
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">
-                  <i class="fa fa-briefcase"></i>
-                </span>
-              </div>
-              <select name="company" class="form-control">
-                @foreach($companies as $company)
-                  <option value="{{ $company->id }}">{{ $company->name }}</option>
-                @endforeach
-              </select>
-              @include('components.field', ['field' => 'company'])
-            </div>
-          </div>
         </div>
         <div class="modal-footer">
           <div class="form-group form-actions">

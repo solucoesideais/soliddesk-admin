@@ -36,7 +36,7 @@
             @foreach($companies as $company)
             <tr>
               <td style="width: 40%; {{ $company->blocked_at !== null ? 'opacity: 0.5' : '' }}">
-                <img src="/images/companyavatar.png" class="img-avatar img-responsive" style="width:8%">
+                <img src="/images/company-avatar.png" class="img-avatar img-responsive" style="width:8%">
                 {{ $company->name }}</td>
               <td style="width: 40%">
                 <!-- button trigger modal company -->

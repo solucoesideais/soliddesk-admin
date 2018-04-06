@@ -3,8 +3,12 @@
     "/css/style.css": "/css/style.css",
     "/js/menu.js": "/js/menu.js",
     "/js/popup.js": "/js/popup.js",
+    "/images/avatar.png": "/images/avatar.png",
+    "/images/company-avatar.png": "/images/company-avatar.png",
+    "/images/logo.png": "/images/logo.png",
     "/js/modules/administrators.js": "/js/modules/administrators.js",
     "/js/modules/departments.js": "/js/modules/departments.js",
     "/js/modules/companies.js": "/js/modules/companies.js",
-    "/js/modules/users.js": "/js/modules/users.js"
+    "/js/modules/users.js": "/js/modules/users.js",
+    "/js/modules/specialists.js": "/js/modules/specialists.js"
 }

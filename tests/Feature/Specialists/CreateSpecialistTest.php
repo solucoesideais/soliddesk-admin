@@ -1,57 +1,56 @@
 <?php
 
-namespace Tests\Feature\Users;
+namespace Tests\Feature\Specialists;
 
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Hash;
-use Library\Eloquent\Auth\User;
-use Library\Eloquent\Company;
+use Library\Eloquent\Auth\Specialist;
 use Tests\Concerns\AuthenticatesAdmin;
 use Tests\TestCase;
 
-class CreateUsersTest extends TestCase
+class CreateSpecialistTest extends TestCase
 {
     use AuthenticatesAdmin, WithFaker;
 
     /**
      * @test
      */
-    public function an_admin_can_see_the_create_user_form()
+    public function an_admin_can_see_the_create_specialist_form()
     {
-        $this->get('/users/create')
+        $this->get('/specialists/create')
             ->assertSuccessful()
             ->assertViewHas('creating', true)
             ->assertSee('name="name"')
             ->assertSee('name="email"')
-            ->assertSee('name="manager"');
+            ->assertSee('name="role"');
     }
 
     /**
      * @test
      */
-    public function an_admin_can_store_a_new_user()
+    public function an_admin_can_store_a_new_specialist()
     {
-        [$name, $email, $password, $company] = [$this->faker->name, $this->faker->email, $this->faker->password, create(Company::class)];
+        [$name, $email, $password, $role] = [$this->faker->name, $this->faker->email, $this->faker->password, $this->faker->words(3, true)];
 
-        $this->post('/users', [
+        $this->post('/specialists', [
             'name' => $name,
             'email' => $email,
             'password' => $password,
-            'company' => $company->id,
+            'role' => $role,
         ])
             ->assertStatus(302)
-            ->assertRedirect('/users')
+            ->assertRedirect('/specialists')
             ->assertSessionHas('success');
 
-        $this->assertDatabaseHas('users', [
+        $this->assertDatabaseHas('specialists', [
             'name' => $name,
             'email' => $email,
-            'company_id' => $company->id
+            'role' => $role,
         ]);
 
         $this->assertTrue(
             Hash::check($password,
-                User::where('email', $email)->first()->password
+                Specialist::where('email', $email)->first()->password
             )
         );
     }
