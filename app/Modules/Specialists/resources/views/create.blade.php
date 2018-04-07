@@ -5,7 +5,7 @@
   </script>
 @endpush
 
-<div class="modal fade" id="register-user" tabindex="-1" role="dialog" aria-labelledby="register-user" aria-hidden="true">
+<div class="modal fade" id="register-specialist" tabindex="-1" role="dialog" aria-labelledby="register-specialist" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <form action="/specialists" method="post" class="was-validated">
@@ -50,6 +50,17 @@
               </div>
               <input required type="password" value="{{ old('password') }}" id="password" name="password" class="form-control" placeholder="Password">
               @include('components.field', ['field' => 'password'])
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fa fa-lock"></i>
+                </span>
+              </div>
+              <input required type="text" value="{{ old('role') }}" id="role" name="role" class="form-control" placeholder="Cargo">
+              @include('components.field', ['field' => 'role'])
             </div>
           </div>
         </div>

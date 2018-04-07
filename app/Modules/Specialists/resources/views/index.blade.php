@@ -38,7 +38,7 @@
               <td>{{ $specialist->email }}</td>
               <td>
                 <!-- button trigger modal company -->
-                <a href="/departments/{{ $department->id }}/companies" class="btn btn-success">
+                <a href="/specialists/{{ $specialist->id }}/companies" class="btn btn-success">
                   <i class="fa fa-plus"></i>
                   Empresas
                 </a>
