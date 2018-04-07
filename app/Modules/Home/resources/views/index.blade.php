@@ -6,8 +6,8 @@
       <div class="card-body pb-0">
         <div class="btn-group float-right">
         </div>
-        <h4 class="mb-0">40 Empresas</h4>
-        <p>xx Empresas bloquedas</p>
+        <h4 class="mb-0">{{ $companies }} Empresas</h4>
+        <p>{{ $blockedCompanies }} Empresas bloquedas</p>
       </div>
       <div class="chart-wrapper px-3" style="height:70px;">
         <canvas id="card-chart1" class="chart chartjs-render-monitor" height="87" style="display: block; height: 70px; width: 141px;"
@@ -19,8 +19,8 @@
   <div class="col-sm-6 col-lg-3">
     <div class="card text-white bg-info">
       <div class="card-body pb-0">
-        <h4 class="mb-0">200</h4>
-        <p>Usuários</p>
+        <h4 class="mb-0">{{ $users }} Usuários</h4>
+        <p>{{ $managers }} Gestores</p>
       </div>
       <div class="chart-wrapper px-3" style="height:70px;">
         <canvas id="card-chart2" class="chart chartjs-render-monitor" height="87" style="display: block; height: 70px; width: 141px;"
