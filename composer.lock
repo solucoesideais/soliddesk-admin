@@ -1270,12 +1270,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/solucoesideais/soliddesk-library.git",
-                "reference": "e121835f132cd6c9a3425750189e42247ce100d2"
+                "reference": "d4385704cf01676a7217bf2e8eb24e7e9b78bc7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solucoesideais/soliddesk-library/zipball/e121835f132cd6c9a3425750189e42247ce100d2",
-                "reference": "e121835f132cd6c9a3425750189e42247ce100d2",
+                "url": "https://api.github.com/repos/solucoesideais/soliddesk-library/zipball/d4385704cf01676a7217bf2e8eb24e7e9b78bc7a",
+                "reference": "d4385704cf01676a7217bf2e8eb24e7e9b78bc7a",
                 "shasum": ""
             },
             "require": {
@@ -1286,7 +1286,8 @@
                 "laravel": {
                     "providers": [
                         "Library\\Providers\\EloquentFactoriesServiceProvider",
-                        "Library\\Providers\\MigrationsServiceProvider"
+                        "Library\\Providers\\MigrationsServiceProvider",
+                        "Library\\Providers\\TimezoneServiceProvider"
                     ]
                 }
             },
@@ -1299,7 +1300,7 @@
                 "source": "https://github.com/solucoesideais/soliddesk-library/tree/master",
                 "issues": "https://github.com/solucoesideais/soliddesk-library/issues"
             },
-            "time": "2018-04-06T20:32:52+00:00"
+            "time": "2018-04-07T16:25:36+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

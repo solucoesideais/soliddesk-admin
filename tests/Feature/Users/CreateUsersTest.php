@@ -4,6 +4,7 @@ namespace Tests\Feature\Users;
 
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Hash;
+use Library\Auth\UserType;
 use Library\Eloquent\Auth\User;
 use Library\Eloquent\Company;
 use Tests\Concerns\AuthenticatesAdmin;
@@ -23,7 +24,7 @@ class CreateUsersTest extends TestCase
             ->assertViewHas('creating', true)
             ->assertSee('name="name"')
             ->assertSee('name="email"')
-            ->assertSee('name="manager"');
+            ->assertSee('name="type"');
     }
 
     /**
@@ -38,6 +39,7 @@ class CreateUsersTest extends TestCase
             'email' => $email,
             'password' => $password,
             'company' => $company->id,
+            'type' => $this->faker->randomElement(UserType::options()),
         ])
             ->assertStatus(302)
             ->assertRedirect('/users')
