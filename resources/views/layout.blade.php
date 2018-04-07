@@ -15,7 +15,7 @@
     </div>
   </div>
   <header class="app-header navbar">
-    <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button" onclick="toggleMenu()">
+    <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button" onclick="toggleMenuMobile()">
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#"></a>
@@ -47,30 +47,30 @@
       <nav class="sidebar-nav">
         <ul class="nav">
           <li class="nav-item open">
-            <a class="nav-link active" href="/home">
+            <a class="nav-link @route(['/', 'home']) active @endroute" href="/home">
               <i class="icon-speedometer"></i> Dashboard</a>
           </li>
           <li class="nav-title">
             Gerenciar
           </li>
           <li class="nav-item">
-            <a href="/administrators" class="nav-link">
+            <a href="/administrators" class="nav-link @route('administrators') active @endroute">
               <i class="icon-wrench"></i> Administradores</a>
           </li>
           <li class="nav-item">
-            <a href="/specialists" class="nav-link">
+            <a href="/specialists" class="nav-link @route('specialists') active @endroute">
               <i class="icon-earphones-alt"></i> Técnicos</a>
           </li>
           <li class="nav-item">
-            <a href="/departments" class="nav-link">
+            <a href="/departments" class="nav-link @route('departments') active @endroute">
               <i class="icon-organization"></i> Departamentos</a>
           </li>
           <li class="nav-item">
-            <a href="/companies" class="nav-link">
+            <a href="/companies" class="nav-link @route('companies') active @endroute">
               <i class="icon-briefcase"></i> Empresas</a>
           </li>
           <li class="nav-item">
-            <a href="/users" class="nav-link">
+            <a href="/users" class="nav-link @route('users') active @endroute">
               <i class="icon-people"></i> Usuários</a>
           </li>
           <li class="divider"></li>

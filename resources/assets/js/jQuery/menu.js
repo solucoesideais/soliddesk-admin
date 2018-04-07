@@ -19,3 +19,8 @@ function toggleMenu() {
     $('body').toggleClass('sidebar-hidden');
     resizeBroadcast();
 }
+
+function toggleMenuMobile() {
+    $('body').toggleClass('sidebar-mobile-show');
+    resizeBroadcast();
+}
