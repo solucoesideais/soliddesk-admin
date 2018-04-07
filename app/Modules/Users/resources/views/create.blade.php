@@ -68,10 +68,10 @@
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fa fa-briefcase"></i>
+                  <i class="fa fa-sitemap"></i>
                 </span>
               </div>
-              <select required name="department" class="form-control">
+              <select name="department" class="form-control">
                 @foreach($departments as $department)
                 <option value="{{ $department->id }}">{{ $department->name }}</option>
                 @endforeach

@@ -8,8 +8,8 @@ use Library\Eloquent\Company;
 
 class CreatesUsers extends Controller
 {
-    public function __invoke(Company $company, UsersPage $page)
+    public function __invoke(UsersPage $page)
     {
-        return $page->create($company);
+        return $page->create();
     }
 }

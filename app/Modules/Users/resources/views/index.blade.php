@@ -6,6 +6,10 @@
   @include('users::create')
 @endif
 
+@if($editing)
+  @include('users::edit')
+@endif
+
 <div class="row">
   <div class="col-lg">
     <div class="card card-accent-primary">
@@ -25,7 +29,7 @@
               <th>Empresa</th>
               <th>Departamento</th>
               <th>Criado em</th>
-              <th>Gestor</th>
+              <th>Gestor?</th>
               <th></th>
             </tr>
           </thead>
@@ -34,11 +38,11 @@
             <tr>
               <td>{{ $user->name }}</td>
               <td>{{ $user->email }}</td>
-              <td>{{ $user->department->name }}</td>
               <td>{{ $user->company->name }}</td>
+              <td>{{ $user->department->name }}</td>
               <td>{{ $user->created_at }}</td>
               <td>
-                @if($user->type == 'manager')
+                @if($user->type == \Library\Auth\UserType::MANAGER)
                   <i class="fa fa-check fa-lg"></i>
                 @endif
               </td>

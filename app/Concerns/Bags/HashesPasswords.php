@@ -11,6 +11,8 @@ trait HashesPasswords
 {
     protected function hashPassword(): void
     {
-        $this->attributes['password'] = Hash::make($this->attributes['password']);
+        if (isset($this->attributes['password'])) {
+            $this->attributes['password'] = Hash::make($this->attributes['password']);
+        }
     }
 }

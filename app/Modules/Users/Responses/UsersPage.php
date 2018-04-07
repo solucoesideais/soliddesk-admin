@@ -14,13 +14,19 @@ class UsersPage
     private $user;
 
     /**
+     * @var Company
+     */
+    private $company;
+
+    /**
      * @var Department
      */
     private $department;
 
-    public function __construct(User $user, Department $department)
+    public function __construct(User $user, Company $company, Department $department)
     {
         $this->user = $user;
+        $this->company = $company;
         $this->department = $department;
     }
 
@@ -28,14 +34,24 @@ class UsersPage
     {
         return view('users::index')
             ->with('users', $this->user->paginate(10))
-            ->with('departments', $this->department->all())
-            ->with('creating', false);
+            ->with('creating', false)
+            ->with('editing', false);
     }
 
-    public function create(Company $company)
+    public function create()
     {
         return $this->index()
             ->with('creating', true)
-            ->with('companies', $company->all());
+            ->with('departments', $this->department->all())
+            ->with('companies', $this->company->all());
+    }
+
+    public function edit($user)
+    {
+        return $this->index()
+            ->with('editing', true)
+            ->with('record', $user)
+            ->with('companies', $this->company->all())
+            ->with('departments', $this->department->all());
     }
 }

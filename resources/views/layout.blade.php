@@ -62,16 +62,16 @@
               <i class="icon-earphones-alt"></i> Técnicos</a>
           </li>
           <li class="nav-item">
-            <a href="/departments" class="nav-link @route('departments') active @endroute">
-              <i class="icon-organization"></i> Departamentos</a>
-          </li>
-          <li class="nav-item">
             <a href="/companies" class="nav-link @route('companies') active @endroute">
               <i class="icon-briefcase"></i> Empresas</a>
           </li>
           <li class="nav-item">
             <a href="/users" class="nav-link @route('users') active @endroute">
               <i class="icon-people"></i> Usuários</a>
+          </li>
+          <li class="nav-item">
+            <a href="/departments" class="nav-link @route('departments') active @endroute">
+              <i class="icon-organization"></i> Departamentos</a>
           </li>
           <li class="divider"></li>
           <li class="nav-title">

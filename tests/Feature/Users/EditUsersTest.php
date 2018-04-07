@@ -10,18 +10,20 @@ use Library\Eloquent\Company;
 use Tests\Concerns\AuthenticatesAdmin;
 use Tests\TestCase;
 
-class CreateUsersTest extends TestCase
+class EditUsersTest extends TestCase
 {
     use AuthenticatesAdmin, WithFaker;
 
     /**
      * @test
      */
-    public function an_admin_can_see_the_create_user_form()
+    public function an_admin_can_see_the_edit_user_form()
     {
-        $this->get('/users/create')
+        $user = create(User::class);
+
+        $this->get("/users/$user->id/edit")
             ->assertSuccessful()
-            ->assertViewHas('creating', true)
+            ->assertViewHas('editing', true)
             ->assertSee('name="name"')
             ->assertSee('name="email"')
             ->assertSee('name="type"')
@@ -31,15 +33,16 @@ class CreateUsersTest extends TestCase
     /**
      * @test
      */
-    public function an_admin_can_store_a_new_user()
+    public function an_admin_can_update_a_user()
     {
-        [$name, $email, $password, $company] = [$this->faker->name, $this->faker->email, $this->faker->password, create(Company::class)];
+        $user = create(User::class);
+
+        [$name, $email, $company] = [$this->faker->name, $this->faker->email, create(Company::class), ];
         $type = $this->faker->randomElement(UserType::options());
 
-        $this->post('/users', [
+        $this->patch("/users/$user->id", [
             'name' => $name,
             'email' => $email,
-            'password' => $password,
             'company' => $company->id,
             'type' => $type,
         ])
@@ -48,16 +51,10 @@ class CreateUsersTest extends TestCase
             ->assertSessionHas('success');
 
         $this->assertDatabaseHas('users', [
+            'id' => $user->id,
             'name' => $name,
             'email' => $email,
-            'company_id' => $company->id,
-            'type' => $type
+            'company_id' => $company->id
         ]);
-
-        $this->assertTrue(
-            Hash::check($password,
-                User::where('email', $email)->first()->password
-            )
-        );
     }
 }
