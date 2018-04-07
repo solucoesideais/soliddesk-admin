@@ -79,15 +79,15 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="reports/especialists.html">
-              <i class="icon-puzzle"></i> Técnicos</a>
+              <i class="icon-earphones-alt"></i> Técnicos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="reports/companies.html">
-              <i class="icon-puzzle"></i> Empresas</a>
+              <i class="icon-briefcase"></i> Empresas</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="reports/managers.html">
-              <i class="icon-puzzle"></i> Gestores</a>
+              <i class="icon-people"></i> Gestores</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="reports/closetheloop.html">

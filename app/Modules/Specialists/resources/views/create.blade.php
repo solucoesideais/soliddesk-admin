@@ -56,7 +56,7 @@
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fa fa-lock"></i>
+                  <i class="fa fa-black-tie"></i>
                 </span>
               </div>
               <input required type="text" value="{{ old('role') }}" id="role" name="role" class="form-control" placeholder="Cargo">

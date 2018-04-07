@@ -26,6 +26,7 @@
             <tr>
               <th>Nome</th>
               <th>Email</th>
+              <th>Cargo</th>
               <th>Empresa</th>
               <th>Criado em</th>
               <th></th>
@@ -36,6 +37,7 @@
             <tr>
               <td>{{ $specialist->name }}</td>
               <td>{{ $specialist->email }}</td>
+              <td>{{ $specialist->role }}</td>
               <td>
                 <!-- button trigger modal company -->
                 <a href="/specialists/{{ $specialist->id }}/companies" class="btn btn-success">
