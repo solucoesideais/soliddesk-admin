@@ -23,6 +23,7 @@
               <th>Nome</th>
               <th>Email</th>
               <th>Empresa</th>
+              <th>Departamento</th>
               <th>Criado em</th>
               <th>Gestor</th>
               <th></th>
@@ -33,6 +34,7 @@
             <tr>
               <td>{{ $user->name }}</td>
               <td>{{ $user->email }}</td>
+              <td>{{ $user->department->name }}</td>
               <td>{{ $user->company->name }}</td>
               <td>{{ $user->created_at }}</td>
               <td>

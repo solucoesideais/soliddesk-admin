@@ -64,6 +64,21 @@
               @include('components.field', ['field' => 'company'])
             </div>
           </div>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fa fa-briefcase"></i>
+                </span>
+              </div>
+              <select required name="department" class="form-control">
+                @foreach($depatments as $department)
+                <option value="{{ $department->id }}">{{ $department->name }}</option>
+                @endforeach
+              </select>
+              @include('components.field', ['field' => 'department'])
+            </div>
+          </div>
           <div class="form-group row">
             <div class="col col-form-label">
               <div class="form-check form-check-inline mr-1">
