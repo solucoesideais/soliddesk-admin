@@ -24,6 +24,7 @@
               <th>Email</th>
               <th>Empresa</th>
               <th>Criado em</th>
+              <th>Gestor</th>
               <th></th>
             </tr>
           </thead>
@@ -34,6 +35,11 @@
               <td>{{ $user->email }}</td>
               <td>{{ $user->company->name }}</td>
               <td>{{ $user->created_at }}</td>
+              <td>
+                @if($user->type == 'manager')
+                  <i class="fa fa-check fa-lg"></i>
+                @endif
+              </td>
               <td>
                 <div class="row">
                   <a href="/users/{{ $user->id }}/edit" class="btn btn-link">

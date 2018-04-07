@@ -18,7 +18,7 @@
   <div class="col-lg">
     <div class="card card-accent-primary">
       <div class="card-header">
-        <i class="fa fa-tag"></i> Departamentos
+        <i class="fa fa-sitemap"></i> Departamentos
         <a class="btn btn-primary float-right" href="/departments/create">
           <i class="fa fa-plus"></i> Novo Departamento
         </a>

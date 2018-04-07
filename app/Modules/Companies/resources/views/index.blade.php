@@ -18,7 +18,7 @@
   <div class="col-lg">
     <div class="card card-accent-primary">
       <div class="card-header">
-        <i class="fa fa-tag"></i> Empresas
+        <i class="fa fa-briefcase"></i> Empresas
         <a class="btn btn-primary float-right" href="/companies/create">
           <i class="fa fa-plus"></i> Nova Empresa
         </a>

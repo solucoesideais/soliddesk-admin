@@ -1,19 +1,19 @@
 @push('scripts')
-  <script src="{{ asset('js/modules/users.js') }}"></script>
+  <script src="{{ asset('js/modules/specialists.js') }}"></script>
   <script type="text/javascript">
-    Users.create();
+    Specialists.create();
   </script>
 @endpush
 
 <div class="modal fade" id="register-user" tabindex="-1" role="dialog" aria-labelledby="register-user" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <form action="/users" method="post" class="was-validated">
+      <form action="/specialists" method="post" class="was-validated">
         @csrf
 
         <div class="modal-header">
           <h5 class="modal-title">
-            <i class="fa fa-plus"></i> Novo usuário</h5>
+            <i class="fa fa-plus"></i> Novo técnico</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -55,7 +55,7 @@
         </div>
         <div class="modal-footer">
           <div class="form-group form-actions">
-            <a class="btn btn-secondary" href="/users">Cancelar</a>
+            <a class="btn btn-secondary" href="/specialists">Cancelar</a>
             <button type="submit" class="btn btn-primary">Salvar</button>
           </div>
         </div>
