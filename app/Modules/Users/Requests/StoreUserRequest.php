@@ -6,6 +6,7 @@ use App\Http\Contracts\Baggable;
 use App\Http\Requests\BaseFormRequest;
 use App\Modules\Users\Bags\UserBag;
 use Illuminate\Validation\Rule;
+use Library\Auth\UserType;
 
 class StoreUserRequest extends BaseFormRequest implements Baggable
 {
@@ -13,9 +14,10 @@ class StoreUserRequest extends BaseFormRequest implements Baggable
     {
         return [
             'name' => 'required|string',
-            'email' => 'required|email',
+            'email' => ['required', 'email', Rule::unique('users', 'email')],
             'password' => 'required|string|min:6',
-            'company' => ['required', Rule::exists('companies', 'id')]
+            'company' => ['required', Rule::exists('companies', 'id')],
+            'type' => ['required', Rule::in(UserType::options())]
         ];
     }
 

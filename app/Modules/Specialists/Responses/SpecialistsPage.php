@@ -3,6 +3,7 @@
 namespace App\Modules\Specialists\Responses;
 
 use Library\Eloquent\Auth\Specialist;
+use Library\Eloquent\Company;
 
 class SpecialistsPage
 {
@@ -27,5 +28,13 @@ class SpecialistsPage
     {
         return $this->index()
             ->with('creating', true);
+    }
+
+    public function companies(Specialist $specialist, Company $company)
+    {
+        return $this->index()
+            ->with('linkingCompanies', true)
+            ->with('record', $specialist)
+            ->with('companies', $company->all());
     }
 }

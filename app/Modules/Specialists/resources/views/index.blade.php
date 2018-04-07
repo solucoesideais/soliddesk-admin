@@ -6,6 +6,10 @@
   @include('specialists::create')
 @endif
 
+@if($linkingCompanies)
+  @include('specialists::companies')
+@endif
+
 <div class="row">
   <div class="col-lg">
     <div class="card card-accent-primary">

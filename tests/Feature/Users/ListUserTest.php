@@ -20,7 +20,8 @@ class ListUserTest extends TestCase
         $this->get('/users')
             ->assertSuccessful()
             ->assertSeeText(e($user->email))
-            ->assertSeeText(e($user->name));
+            ->assertSeeText(e($user->name))
+            ->assertSeeText($user->created_at->format('d/m/Y H:i:s'));
 
     }
 }
