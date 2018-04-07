@@ -21,7 +21,8 @@ class SpecialistsPage
     {
         return view('specialists::index')
             ->with('specialists', $this->specialist->paginate(10))
-            ->with('creating', false);
+            ->with('creating', false)
+            ->with('linkingCompanies', false);
     }
 
     public function create()

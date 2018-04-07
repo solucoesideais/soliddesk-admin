@@ -27,7 +27,6 @@ class LinkingCompaniesToSpecialistTest extends TestCase
 
     /**
      * @test
-     * @group f
      */
     public function an_admin_can_link_companies_to_a_specialist()
     {
@@ -45,25 +44,25 @@ class LinkingCompaniesToSpecialistTest extends TestCase
             $this->assertDatabaseHas('company_specialist', ['company_id' => $company->id, 'specialist_id' => $specialist->id]);
         }
     }
-//
-//    /**
-//     * @test
-//     */
-//    public function an_admin_can_unlink_companies_to_a_department()
-//    {
-//        $department = create(Department::class);
-//        $companies = create(Company::class, [], 3);
-//        $department->companies()->sync($companies->pluck('id'));
-//
-//        $this->post("/departments/$department->id/companies", [
-//
-//        ])
-//            ->assertStatus(302)
-//            ->assertRedirect('/departments')
-//            ->assertSessionHas('success');
-//
-//        foreach ($companies as $company) {
-//            $this->assertDatabaseMissing('company_department', ['company_id' => $company->id, 'department_id' => $department->id]);
-//        }
-//    }
+
+    /**
+     * @test
+     */
+    public function an_admin_can_unlink_companies_from_a_specialist()
+    {
+        $specialist = create(Specialist::class);
+        $companies = create(Company::class, [], 3);
+        $specialist->companies()->sync($companies->pluck('id'));
+
+        $this->post("/specialists/$specialist->id/companies", [
+
+        ])
+            ->assertStatus(302)
+            ->assertRedirect('/specialists')
+            ->assertSessionHas('success');
+
+        foreach ($companies as $company) {
+            $this->assertDatabaseMissing('company_specialist', ['company_id' => $company->id, 'specialist_id' => $specialist->id]);
+        }
+    }
 }
