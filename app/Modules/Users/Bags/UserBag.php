@@ -24,6 +24,8 @@ class UserBag
 
         $this->company();
 
+        $this->department();
+
         return $this->attributes;
     }
 
@@ -32,5 +34,14 @@ class UserBag
         $this->attributes['company_id'] = $this->attributes['company'];
 
         unset($this->attributes['company']);
+    }
+
+    private function department()
+    {
+        if (isset($this->attributes['department'])) {
+            $this->attributes['department_id'] = $this->attributes['department'];
+
+            unset($this->attributes['department']);
+        }
     }
 }

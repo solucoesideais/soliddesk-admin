@@ -1270,12 +1270,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/solucoesideais/soliddesk-library.git",
-                "reference": "8c5ed76e1fac4b8849d09839ab69806e9155fb56"
+                "reference": "9e0f38a9bf54ca4ff7d23e3c362af22def5fa345"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solucoesideais/soliddesk-library/zipball/8c5ed76e1fac4b8849d09839ab69806e9155fb56",
-                "reference": "8c5ed76e1fac4b8849d09839ab69806e9155fb56",
+                "url": "https://api.github.com/repos/solucoesideais/soliddesk-library/zipball/9e0f38a9bf54ca4ff7d23e3c362af22def5fa345",
+                "reference": "9e0f38a9bf54ca4ff7d23e3c362af22def5fa345",
                 "shasum": ""
             },
             "require": {
@@ -1288,7 +1288,8 @@
                         "Library\\Providers\\EloquentFactoriesServiceProvider",
                         "Library\\Providers\\MigrationsServiceProvider",
                         "Library\\Providers\\TimezoneServiceProvider",
-                        "Library\\Providers\\BladeServiceProvider"
+                        "Library\\Providers\\BladeServiceProvider",
+                        "Library\\Providers\\EventServiceProvider"
                     ]
                 }
             },
@@ -1301,7 +1302,7 @@
                 "source": "https://github.com/solucoesideais/soliddesk-library/tree/master",
                 "issues": "https://github.com/solucoesideais/soliddesk-library/issues"
             },
-            "time": "2018-04-07T18:48:21+00:00"
+            "time": "2018-04-08T10:13:35+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
