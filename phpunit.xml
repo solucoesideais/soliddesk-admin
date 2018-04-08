@@ -18,8 +18,11 @@
         </testsuite>
     </testsuites>
     <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
+        <whitelist processUncoveredFilesFromWhitelist="false">
             <directory suffix=".php">./app</directory>
+            <exclude>
+                <directory suffix="blade.php">./app/Modules</directory>
+            </exclude>
         </whitelist>
     </filter>
     <php>
@@ -34,4 +37,8 @@
         <env name="DB_PASSWORD" value="secret"/>
         <env name="DB_DATABASE" value="soliddesk"/>
     </php>
+    <!--<logging>-->
+        <!--<log type="coverage-html" target="public/report/" charset="UTF-8"-->
+             <!--yui="true" highlight="true" lowUpperBound="50" highLowerBound="80"/>-->
+    <!--</logging>-->
 </phpunit>
