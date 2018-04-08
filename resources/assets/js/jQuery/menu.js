@@ -16,11 +16,11 @@ function resizeBroadcast() {
 }
 
 function toggleMenu() {
-    $('body').toggleClass('sidebar-hidden');
+    $('.app').toggleClass('sidebar-hidden');
     resizeBroadcast();
 }
 
 function toggleMenuMobile() {
-    $('body').toggleClass('sidebar-mobile-show');
+    $('.app').toggleClass('sidebar-mobile-show');
     resizeBroadcast();
 }
