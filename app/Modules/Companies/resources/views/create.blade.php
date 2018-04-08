@@ -27,6 +27,7 @@
                 </span>
               </div>
               <input type="text" id="name" name="name" class="form-control" placeholder="Empresa">
+              @include('components.field', ['field' => 'name'])
             </div>
           </div>
           <div class="form-group">

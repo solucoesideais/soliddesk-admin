@@ -48,7 +48,7 @@
               <td>{{ $specialist->created_at }}</td>
               <td>
                 <div class="row">
-                  <a href="/users/{{ $specialist->id }}/edit" class="btn btn-link">
+                  <a href="/specialists/{{ $specialist->id }}/edit" class="btn btn-link">
                     <i class="fa fa-pencil fa-lg"></i>
                   </a>
                   @include('components.delete', ['action' => "/users/$specialist->id"])
