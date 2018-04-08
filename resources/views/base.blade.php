@@ -20,6 +20,7 @@
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="{{ asset('js/menu.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/popup.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/lib/jquery.chained.js') }}"></script>
   @stack('scripts')
 </body>
 </html>

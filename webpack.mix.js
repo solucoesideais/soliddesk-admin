@@ -13,6 +13,7 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
 mix.copy('resources/assets/js/jQuery/menu.js', 'public/js/menu.js')
+    .copy('node_modules/jquery-chained/jquery.chained.js', 'public/js/lib/jquery.chained.js')
     .copy('resources/assets/js/jQuery/popup.js', 'public/js/popup.js')
     .copy('resources/assets/img/*', 'public/images/')
     .copy('app/Modules/Administrators/resources/js/administrators.js', 'public/js/modules/administrators.js')

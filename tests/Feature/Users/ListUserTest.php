@@ -21,6 +21,7 @@ class ListUserTest extends TestCase
             ->assertSuccessful()
             ->assertSeeText(e($user->email))
             ->assertSeeText(e($user->name))
+            ->assertSeeText(e($user->department->name))
             ->assertSeeText($user->created_at->format('d/m/Y H:i:s'));
 
     }

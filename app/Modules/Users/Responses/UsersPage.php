@@ -42,8 +42,7 @@ class UsersPage
     {
         return $this->index()
             ->with('creating', true)
-            ->with('departments', $this->department->all())
-            ->with('companies', $this->company->all());
+            ->with('companies', $this->company->with('departments')->get());
     }
 
     public function edit($user)
@@ -51,7 +50,6 @@ class UsersPage
         return $this->index()
             ->with('editing', true)
             ->with('record', $user)
-            ->with('companies', $this->company->all())
-            ->with('departments', $this->department->all());
+            ->with('companies', $this->company->with('departments')->get());
     }
 }

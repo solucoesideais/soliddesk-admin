@@ -27,7 +27,8 @@ class EditUsersTest extends TestCase
             ->assertSee('name="name"')
             ->assertSee('name="email"')
             ->assertSee('name="type"')
-            ->assertSee('name="company"');
+            ->assertSee('name="company"')
+            ->assertSee('name="department"');
     }
 
     /**

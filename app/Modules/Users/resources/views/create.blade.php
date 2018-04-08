@@ -2,6 +2,7 @@
 <script src="{{ asset('js/modules/users.js') }}"></script>
 <script type="text/javascript">
   Users.create();
+  $('#department').chained('#company');
 </script>
 @endpush
 
@@ -56,9 +57,9 @@
                   <i class="fa fa-briefcase"></i>
                 </span>
               </div>
-              <select required name="company" class="form-control">
+              <select required id="company" name="company" class="form-control">
                 @foreach($companies as $company)
-                <option value="{{ $company->id }}">{{ $company->name }}</option>
+                  <option value="{{ $company->id }}">{{ $company->name }}</option>
                 @endforeach
               </select>
               @include('components.field', ['field' => 'company'])
@@ -71,9 +72,11 @@
                   <i class="fa fa-sitemap"></i>
                 </span>
               </div>
-              <select name="department" class="form-control">
-                @foreach($departments as $department)
-                <option value="{{ $department->id }}">{{ $department->name }}</option>
+              <select id="department" name="department" class="form-control">
+                @foreach($companies as $company)
+                  @foreach($company->departments as $department)
+                    <option value="{{ $department->id }}" data-chained="{{ $company->id }}">{{ $department->name }}</option>
+                  @endforeach
                 @endforeach
               </select>
               @include('components.field', ['field' => 'department'])
@@ -90,6 +93,7 @@
                 <label class="form-check-label">Gestor</label>
               </div>
             </div>
+            @include('components.field', ['field' => 'type'])
           </div>
         </div>
         <div class="modal-footer">

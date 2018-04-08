@@ -7,6 +7,7 @@ use App\Http\Requests\BaseFormRequest;
 use App\Modules\Users\Bags\UserBag;
 use Illuminate\Validation\Rule;
 use Library\Auth\UserType;
+use Library\Eloquent\Company;
 
 class StoreUserRequest extends BaseFormRequest implements Baggable
 {
@@ -17,6 +18,7 @@ class StoreUserRequest extends BaseFormRequest implements Baggable
             'email' => ['required', 'email', Rule::unique('users', 'email')],
             'password' => 'required|string|min:6',
             'company' => ['required', Rule::exists('companies', 'id')],
+            'department' => [Rule::exists('departments', 'id'), Rule::in($this->departments())],
             'type' => ['required', Rule::in(UserType::options())]
         ];
     }
@@ -26,5 +28,16 @@ class StoreUserRequest extends BaseFormRequest implements Baggable
         return new UserBag(
             $this->validated()
         );
+    }
+
+    private function departments(): array
+    {
+        $company = Company::find($this->get('company'));
+
+        if ($company) {
+            return $company->departments->pluck('id')->toArray();
+        }
+
+        return [];
     }
 }
