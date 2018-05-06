@@ -55,6 +55,20 @@ return [
             'visibility' => 'public',
         ],
 
+        'attachments' => [
+            'driver' => 'local',
+            'root' => base_path('../storage/public/attachments/'),
+            'url' => env('STORAGE_ATTACHMENT_URL').'/attachments/',
+            'visibility' => 'public',
+        ],
+
+        \Library\Storage\Disk::COMPANIES => [
+            'driver' => 'local',
+            'root' => base_path('/storage/app/public/companies/'),
+            'url' => env('STORAGE_ATTACHMENT_URL').'/companies/',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

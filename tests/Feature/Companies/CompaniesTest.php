@@ -4,7 +4,10 @@ namespace Tests\Feature\Companies;
 
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Library\Eloquent\Company;
+use Library\Storage\Disk;
 use Tests\Concerns\AuthenticatesAdmin;
 use Tests\TestCase;
 
@@ -40,6 +43,33 @@ class CompaniesTest extends TestCase
         $this->assertDatabaseHas('companies', [
             'name' => $name,
         ]);
+    }
+
+    /**
+     * @test
+     * @group f
+     */
+    public function an_admin_can_create_a_company_with_a_logo()
+    {
+        Storage::fake(Disk::COMPANIES);
+
+        $name = $this->faker->company;
+        $file = UploadedFile::fake()->create('random-logo.png');
+
+        $this->post('/companies', [
+            'name' => $name,
+            'logo' => $file
+        ])
+            ->assertStatus(302)
+            ->assertRedirect('/companies')
+            ->assertSessionHas('success');
+
+        $this->assertDatabaseHas('companies', [
+            'name' => $name,
+            'logo' => $file->hashName()
+        ]);
+
+        Storage::disk(Disk::COMPANIES)->assertExists($file->hashName());
     }
 
     /**

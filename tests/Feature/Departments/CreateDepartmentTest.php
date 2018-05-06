@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Departments;
 
-use App\Http\Requests\BaseFormRequest;
+use Library\Http\Requests\BaseFormRequest;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Hash;
 use Library\Eloquent\Auth\Administrator;

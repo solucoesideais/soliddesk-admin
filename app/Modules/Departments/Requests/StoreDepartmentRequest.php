@@ -2,7 +2,7 @@
 
 namespace App\Modules\Departments\Requests;
 
-use App\Http\Requests\BaseFormRequest;
+use Library\Http\Requests\BaseFormRequest;
 
 class StoreDepartmentRequest extends BaseFormRequest
 {

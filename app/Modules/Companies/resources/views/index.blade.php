@@ -36,7 +36,7 @@
             @foreach($companies as $company)
             <tr>
               <td style="width: 40%; {{ $company->blocked_at !== null ? 'opacity: 0.5' : '' }}">
-                <img src="/images/company-avatar.png" class="img-avatar img-responsive" style="width:8%">
+                <img src="{{ $company->logoUrl }}" class="img-avatar img-responsive" style="width:8%">
                 {{ $company->name }}</td>
               <td style="width: 40%">
                 <!-- button trigger modal company -->
@@ -58,9 +58,9 @@
                 
                     <button class="btn btn-link" type="submit">
                       @if($company->blocked_at === null)
-                        <i class="text-warning fa fa-lock fa-lg"></i>
-                      @else
                         <i class="text-success fa fa-unlock fa-lg"></i>
+                      @else
+                        <i class="text-warning fa fa-lock fa-lg"></i>
                       @endif
                     </button>
                 </form>

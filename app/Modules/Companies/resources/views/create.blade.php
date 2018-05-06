@@ -8,7 +8,7 @@
 <div class="modal fade" id="register-company" tabindex="-1" role="dialog" aria-labelledby="register-company" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <form action="/companies" method="post">
+      <form action="/companies" method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="modal-header">
@@ -32,8 +32,9 @@
           </div>
           <div class="form-group">
             <div class="custom-file">
-              <input type="file" class="custom-file-input" onchange="$(this).next().html('Arquivo selecionado')">
+              <input name="logo" type="file" class="custom-file-input" onchange="$(this).next().html('Arquivo selecionado')">
               <label class="custom-file-label">Selecionar Arquivo</label>
+              @include('components.field', ['field' => 'logo'])
             </div>
           </div>
         </div>

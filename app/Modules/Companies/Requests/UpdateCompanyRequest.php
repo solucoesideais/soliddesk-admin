@@ -2,7 +2,7 @@
 
 namespace App\Modules\Companies\Requests;
 
-use App\Http\Requests\BaseFormRequest;
+use Library\Http\Requests\BaseFormRequest;
 
 class UpdateCompanyRequest extends BaseFormRequest
 {

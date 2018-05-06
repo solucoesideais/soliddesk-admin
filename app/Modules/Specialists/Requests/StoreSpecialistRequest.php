@@ -3,7 +3,7 @@
 namespace App\Modules\Specialists\Requests;
 
 use App\Http\Contracts\Baggable;
-use App\Http\Requests\BaseFormRequest;
+use Library\Http\Requests\BaseFormRequest;
 use App\Modules\Specialists\Bags\SpecialistBag;
 use App\Modules\Users\Bags\UserBag;
 use Illuminate\Validation\Rule;
