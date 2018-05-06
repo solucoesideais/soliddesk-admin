@@ -1,5 +1,7 @@
 <?php
 
+use Library\Storage\Disk;
+
 return [
 
     /*
@@ -55,14 +57,14 @@ return [
             'visibility' => 'public',
         ],
 
-        'attachments' => [
+        Disk::ATTACHMENTS => [
             'driver' => 'local',
-            'root' => base_path('../storage/public/attachments/'),
+            'root' => base_path('/storage/app/public/attachments/'),
             'url' => env('STORAGE_ATTACHMENT_URL').'/attachments/',
             'visibility' => 'public',
         ],
 
-        \Library\Storage\Disk::COMPANIES => [
+        Disk::COMPANIES => [
             'driver' => 'local',
             'root' => base_path('/storage/app/public/companies/'),
             'url' => env('STORAGE_ATTACHMENT_URL').'/companies/',
